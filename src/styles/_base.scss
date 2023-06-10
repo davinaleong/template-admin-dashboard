@@ -41,6 +41,8 @@
   @each $key, $value in $breakpoints {
     --bp-#{$key}: #{$value};
   }
+
+  --container-width: 1200px;
 }
 
 /// Base - HTML & Body
@@ -51,7 +53,7 @@ html {
 body,
 .body {
   font-family: var(--ff-primary);
-  font-size: var(--fz-md);
+  font-size: var(--fz-base);
   font-weight: var(--fw-400);
   font-style: var(--fs-normal);
   line-height: 1.5;

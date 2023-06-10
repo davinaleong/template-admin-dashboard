@@ -1,19 +1,21 @@
 /// Buttons
 
 .btn {
-  --btn-clr: var(--clr-gray-900);
-  --btn-bg-clr: var(--clr-gray-400);
+  --btn-clr: var(--clr-gray-50);
+  --btn-bg-clr: var(--clr-primary-500);
+  --btn-border: thin solid var(--clr-primary-500);
 
   --btn-hover-clr: var(--clr-gray-50);
-  --btn-hover-bg-clr: var(--clr-primary-500);
+  --btn-hover-bg-clr: var(--clr-gray-500);
+  --btn-hover-border: thin solid var(--clr-gray-500);
 
   --btn-padding: var(--size-v-300);
   --btn-gap: var(--size-v-300);
-  --btn-border-radius: var(--size-v-200);
+  --btn-border-radius: 0;
 
   --btn-ff: var(--ff-primary);
-  --btn-fz: var(--fz-reg);
-  --btn-fw: var(--fw-bold);
+  --btn-fz: var(--fz-md);
+  --btn-fw: var(--fw-normal);
   --btn-tt: normal;
   --btn-offset: var(--size-v-400);
   --btn-opacity: 1;
@@ -33,7 +35,7 @@
   padding-bottom: var(--btn-padding);
   padding-left: var(--btn-padding);
   padding-right: var(--btn-padding);
-  border: none;
+  border: var(--btn-border);
   border-radius: var(--btn-border-radius);
   opacity: var(--btn-opacity);
   text-decoration: var(--btn-td);
@@ -42,35 +44,31 @@
   &:hover {
     color: var(--btn-hover-clr);
     background-color: var(--btn-hover-bg-clr);
+    border: var(--btn-hover-border);
   }
 
   &[disabled] {
     --btn-clr: var(--clr-gray-500);
     --btn-bg-clr: var(--clr-gray-200);
+    --btn-border: thin solid var(--clr-gray-200);
 
     --btn-hover-clr: var(--clr-gray-500);
     --btn-hover-bg-clr: var(--clr-gray-200);
+    --btn-hover-border: thin solid var(--clr-gray-200);
 
     --btn-opacity: 0.8;
 
     cursor: not-allowed;
   }
 
-  .active,
-  &[data-active="true"] {
-    --btn-clr: var(--clr-gray-50);
-    --btn-bg-clr: var(--clr-primary-500);
-
-    --btn-hover-clr: var(--clr-gray-50);
-    --btn-hover-bg-clr: var(--clr-primary-300);
-  }
-
   &-link {
     --btn-clr: var(--clr-gray-900);
     --btn-bg-clr: transparent;
+    --btn-border: none;
 
     --btn-hover-clr: var(--clr-primary-500);
     --btn-hover-bg-clr: transparent;
+    --btn-hover-border: none;
 
     --btn-padding: var(--size-v-0);
 
@@ -126,20 +124,36 @@
     isolation: isolate;
   }
 
-  &-primary {
-    --btn-clr: var(--clr-gray-900);
-    --btn-bg-clr: var(--clr-primary-500);
+  @each $key, $value in $colors {
+    &-#{$key} {
+      --btn-clr: var(--clr-#{$key}-50);
+      --btn-bg-clr: var(--clr-#{$key}-500);
+      --btn-border: thin solid var(--clr-gray-200);
 
-    --btn-hover-clr: var(--clr-gray-900);
-    --btn-hover-bg-clr: var(--clr-primary-400);
-  }
+      --btn-hover-clr: var(--clr-#{$key}-50);
+      --btn-hover-bg-clr: var(--clr-#{$key}-700);
+      --btn-hover-border: thin solid var(--clr-gray-200);
+    }
 
-  &-gray {
-    --btn-clr: var(--clr-gray-900);
-    --btn-bg-clr: var(--clr-gray-400);
+    .-#{$key}-light {
+      --btn-clr: var(--clr-#{$key}-900);
+      --btn-bg-clr: var(--clr-#{$key}-100);
+      --btn-border: var(--clr-#{$key}-100);
 
-    --btn-hover-clr: var(--clr-gray-900);
-    --btn-hover-bg-clr: var(--clr-gray-300);
+      --btn-hover-clr: var(--clr-#{$key}-900);
+      --btn-hover-bg-clr: var(--clr-#{$key}-300);
+      --btn-hover-border: var(--clr-#{$key}-300);
+    }
+
+    .-#{$key}-outline {
+      --btn-clr: var(--clr-#{$key}-500);
+      --btn-bg-clr: var(--clr-gray-50);
+      --btn-border: thin solid var(--clr-#{$key}-500);
+
+      --btn-hover-clr: var(--clr-#{$key}-700);
+      --btn-hover-bg-clr: var(--clr-gray-50);
+      --btn-hover-border: thin solid var(--clr-#{$key}-700);
+    }
   }
 
   &-full {

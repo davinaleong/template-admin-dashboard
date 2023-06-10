@@ -52,7 +52,7 @@ $colors: (
     "800": #0c3d0f,
     "900": #061f07,
   ),
-  "accent1": (
+  "accent-1": (
     "50": #f7fcfd,
     "100": #eef9fa,
     "200": #ddf3f5,
@@ -64,7 +64,7 @@ $colors: (
     "800": #323a3e,
     "900": #191d1f,
   ),
-  "accent2": (
+  "accent-2": (
     "50": #e6f3fa,
     "100": #cce8f5,
     "200": #99d1eb,
@@ -76,7 +76,7 @@ $colors: (
     "800": #003852,
     "900": #001c29,
   ),
-  "accent3": (
+  "accent-3": (
     "50": #fdf0ed,
     "100": #fae1da,
     "200": #f5c3b5,
@@ -115,15 +115,24 @@ $font-families: (
 
 /// Fonts - Font Sizes
 $font-sizes: (
-  "base": 16px,
+  // 8px / 10px
+  "100": css-clamp("0.5rem, 1rem + 1vw, 0.625rem"),
+  // 10px / 12px
+  "200": css-clamp("0.625rem, 1rem + 1vw, 0.75rem"),
   // 14px / 16px
-  "sm": css-clamp("0.875rem, 1rem + 2vw, 1rem"),
+  "300": css-clamp("0.875rem, 1rem + 2vw, 1rem"),
   // 16px / 20px
-  "md": css-clamp("1rem, 1rem + 2vw, 1.25rem"),
+  "400": css-clamp("1rem, 1rem + 2vw, 1.25rem"),
   // 20px / 40px
-  "lg": css-clamp("1.25rem, 1rem + 2vw, 2.5rem"),
-  // 30px / 60px
-  "xl": css-clamp("1.875rem, 1rem + 3vw, 3.75rem"),
+  "500": css-clamp("1.25rem, 1rem + 2vw, 2.5rem"),
+  // 24px / 60px
+  "600": css-clamp("1.5rem, 1rem + 3vw, 3.75rem"),
+  // 30px / 80px
+  "700": css-clamp("1.875rem, 1rem + 3vw, 5rem"),
+  // 36px / 100px
+  "800": css-clamp("2.25rem, 1rem + 4vw, 6.25rem"),
+  // 40px / 130px
+  "900": css-clamp("2.5rem, 1rem + 4vw, 8.125rem")
 );
 
 /// Fonts - Font Weights
