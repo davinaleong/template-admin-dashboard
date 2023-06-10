@@ -46,6 +46,8 @@ table,
   --table-clr: var(--clr-gray-900);
   --table-bg-clr: var(--clr-gray-50);
   --table-bg-clr-alt: var(--clr-gray-100);
+  --table-hover-clr: var(--clr-gray-900);
+  --table-hover-bg-clr: var(--clr-gray-200);
   --table-ta: left;
   --table-padding: var(--size-v-200);
   --table-border: none;
@@ -80,6 +82,8 @@ table,
   --table-td-clr: var(--table-clr);
   --table-td-bg-clr: var(--table-bg-clr);
   --table-td-bg-clr-alt: var(--table-bg-clr-alt);
+  --table-td-hover-clr: var(--table-hover-clr);
+  --table-td-hover-bg-clr: var(--table-hover-bg-clr);
   --table-td-height: var(--table-cell-height);
 
   width: 100%;
@@ -169,9 +173,12 @@ table,
 
   &-hover {
     tr:hover {
-      cursor: pointer;
-
-      --table-td-bg: var(--clr-gray-200);
+      th,
+      td {
+        cursor: pointer;
+        color: var(--table-td-hover-clr);
+        background-color: var(--table-td-hover-bg-clr);
+      }
     }
   }
 }
