@@ -98,7 +98,7 @@ table,
   tr {
     border-bottom: var(--table-row-border);
 
-    &:nth-of-type(even) {
+    &:where(:nth-of-type(even)) {
       th,
       td {
         background-color: var(--table-td-even-bg-clr);
