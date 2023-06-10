@@ -43,6 +43,14 @@ ol {
 /// Table
 table,
 .table {
+  --table-caption-clr: var(--clr-gray-900);
+  --table-caption-bg-clr: var(--clr-gray-50);
+  --table-caption-ta: left;
+  --table-caption-fw: var(--fw-bold);
+  --table-caption-tt: uppercase;
+  --table-caption-ls: 0.05rem;
+  --table-caption-padding: var(--size-v-200);
+
   --table-thead-border: 2px solid var(--clr-gray-300);
   --table-thead-th-clr: var(--clr-gray-50);
   --table-thead-th-bg-clr: var(--clr-gray-500);
@@ -53,12 +61,12 @@ table,
 
   --table-th-border: none;
   --table-th-padding: var(--size-v-200);
-  --table-th-text-align: left;
+  --table-th-ta: left;
   --table-th-fw: var(--fw-bold);
 
   --table-td-border: none;
   --table-td-padding: var(--size-v-200);
-  --table-td-text-align: left;
+  --table-td-ta: left;
   --table-td-clr: var(--clr-gray-900);
   --table-td-odd-bg-clr: var(--clr-gray-50);
   --table-td-even-bg-clr: var(--clr-gray-100);
@@ -66,13 +74,26 @@ table,
   width: 100%;
   border-collapse: collapse;
 
+  caption {
+    color: var(--table-caption-clr);
+    background-color: var(--table-caption-bg-clr);
+    text-align: var(--table-caption-ta);
+    font-weight: var(--table-caption-fw);
+    text-transform: var(--table-caption-tt);
+    letter-spacing: var(--table-caption-ls);
+    padding-top: var(--table-caption-padding);
+    padding-right: var(--table-caption-padding);
+    padding-bottom: var(--table-caption-padding);
+    padding-left: var(--table-caption-padding);
+  }
+
   th {
     font-weight: var(--table-th-fw);
     padding-top: var(--table-th-padding);
     padding-right: var(--table-th-padding);
     padding-bottom: var(--table-th-padding);
     padding-left: var(--table-th-padding);
-    text-align: var(--table-th-text-align);
+    text-align: var(--table-th-ta);
     border-top: var(--table-th-border);
     border-right: var(--table-th-border);
     border-bottom: var(--table-th-border);
@@ -86,7 +107,7 @@ table,
     padding-right: var(--table-td-padding);
     padding-bottom: var(--table-td-padding);
     padding-left: var(--table-td-padding);
-    text-align: var(--table-td-text-align);
+    text-align: var(--table-td-ta);
     border-top: var(--table-td-border);
     border-right: var(--table-td-border);
     border-bottom: var(--table-td-border);
