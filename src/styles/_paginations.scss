@@ -1,0 +1,111 @@
+.pagination {
+  --pagination-gap: var(--size-f-200);
+
+  --pagination-item-padding: var(--size-f-200);
+  --pagination-item-fw: var(--fw-semibold);
+
+  --pagination-item-clr: var(--clr-gray-500);
+  --pagination-item-bg-clr: var(--clr-gray-50);
+  --pagination-item-border-clr: var(--clr-gray-500);
+  --pagination-item-border: none;
+
+  --pagination-item-hover-clr: var(--clr-gray-500);
+  --pagination-item-hover-bg-clr: var(--clr-gray-100);
+  --pagination-item-hover-border-clr: var(--clr-gray-500);
+  --pagination-item-hover-border: none;
+
+  --pagination-item-active-clr: var(--clr-gray-50);
+  --pagination-item-active-bg-clr: var(--clr-primary-500);
+  --pagination-item-active-border-clr: var(--clr-primary-500);
+  --pagination-item-active-border: thin solid
+    var(--pagination-item-active-border-clr);
+
+  list-style: none;
+  display: flex;
+  gap: var(--pagination-gap);
+  padding-left: 0;
+
+  &-item {
+    &__arrow,
+    &__number {
+      color: var(--pagination-item-clr);
+      background-color: var(--pagination-item-bg-clr);
+      border: var(--pagination-item-border);
+      padding-top: var(--pagination-item-padding);
+      padding-right: var(--pagination-item-padding);
+      padding-bottom: var(--pagination-item-padding);
+      padding-left: var(--pagination-item-padding);
+      font-weight: var(--pagination-item-fw);
+
+      &:hover {
+        color: var(--pagination-item-hover-clr);
+        background-color: var(--pagination-item-hover-bg-clr);
+        border: var(--pagination-item-hover-border);
+      }
+    }
+
+    &__number[data-active="true"] {
+      color: var(--pagination-item-active-clr);
+      background-color: var(--pagination-item-active-bg-clr);
+      border: var(--pagination-item-active-border);
+    }
+  }
+
+  &-outline {
+    --pagination-item-clr: var(--clr-gray-500);
+    --pagination-item-bg-clr: var(--clr-gray-50);
+    --pagination-item-border-clr: var(--clr-gray-500);
+    --pagination-item-border: none;
+
+    --pagination-item-hover-clr: var(--clr-gray-500);
+    --pagination-item-hover-bg-clr: var(--clr-primary-100);
+    --pagination-item-hover-border-clr: var(--clr-gray-500);
+    --pagination-item-hover-border: none;
+
+    --pagination-item-active-clr: var(--clr-primary-500);
+    --pagination-item-active-bg-clr: var(--clr-primary-50);
+    --pagination-item-active-border-clr: var(--clr-primary-500);
+    --pagination-item-active-border: thin solid
+      var(--pagination-item-active-border-clr);
+  }
+
+  @each $key, $value in $colors {
+    &-#{$key} {
+      --pagination-item-clr: var(--clr-#{$key}-700);
+      --pagination-item-bg-clr: var(--clr-#{$key}-50);
+      --pagination-item-border-clr: var(--clr-#{$key}-50);
+      --pagination-item-border: thin solid var(--pagination-item-border-clr);
+
+      --pagination-item-hover-clr: var(--clr-#{$key}-700);
+      --pagination-item-hover-bg-clr: var(--clr-#{$key}-100);
+      --pagination-item-hover-border-clr: var(--clr-#{$key}-100);
+      --pagination-item-hover-border: thin
+        solid
+        var(--pagination-item-hover-border-clr);
+
+      --pagination-item-active-clr: var(--clr-#{$key}-50);
+      --pagination-item-active-bg-clr: var(--clr-#{$key}-700);
+      --pagination-item-active-border-clr: var(--clr-#{$key}-700);
+      --pagination-item-active-border: thin
+        solid
+        var(--pagination-item-active-border-clr);
+
+      &-outline {
+        --pagination-item-clr: var(--clr-#{$key}-500);
+        --pagination-item-bg-clr: var(--clr-gray-50);
+        --pagination-item-border-clr: var(--clr-gray-50);
+
+        --pagination-item-hover-clr: var(--clr-#{$key}-500);
+        --pagination-item-hover-bg-clr: var(--clr-#{$key}-100);
+        --pagination-item-hover-border-clr: var(--clr-#{$key}-100);
+
+        --pagination-item-active-clr: var(--clr-#{$key}-500);
+        --pagination-item-active-bg-clr: var(--clr-#{$key}-100);
+        --pagination-item-active-border-clr: var(--clr-#{$key}-500);
+        --pagination-item-active-border: thin
+          solid
+          var(--pagination-item-active-border-clr);
+      }
+    }
+  }
+}
