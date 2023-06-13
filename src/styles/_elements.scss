@@ -47,12 +47,13 @@ table,
   --table-bg-clr: var(--clr-gray-50);
   --table-bg-clr-alt: var(--clr-gray-100);
   --table-hover-clr: var(--clr-gray-900);
-  --table-hover-bg-clr: var(--clr-gray-200);
+  --table-hover-bg-clr: var(--clr-primary-200);
+  --table-border-clr: var(--clr-gray-300);
   --table-ta: left;
   --table-padding: var(--size-v-200);
   --table-border: none;
   --table-cell-height: var(--size-f-400);
-  --table-section-border: 2px solid var(--clr-gray-300);
+  --table-section-border: 2px solid var(--table-border-clr);
 
   --table-caption-clr: var(--clr-gray-900);
   --table-caption-bg-clr: var(--clr-gray-50);
@@ -68,7 +69,7 @@ table,
 
   --table-tfoot-border: var(--table-section-border);
 
-  --table-row-border: thin solid var(--clr-gray-300);
+  --table-tr-border: thin solid var(--table-border-clr);
 
   --table-th-border: var(--table-border);
   --table-th-padding: var(--table-padding);
@@ -134,7 +135,7 @@ table,
   }
 
   tr {
-    border-bottom: var(--table-row-border);
+    border-bottom: var(--table-tr-border);
 
     &:where(:nth-of-type(even)) {
       th,
@@ -165,10 +166,16 @@ table,
     }
   }
 
+  &-no-borders {
+    --table-border: none;
+    --table-section-border: none;
+    --table-tr-border: none;
+  }
+
   &-bordered {
     --table-tr-border: none;
-    --table-th-border: thin solid var(--clr-gray-300);
-    --table-td-border: thin solid var(--clr-gray-300);
+    --table-th-border: thin solid var(--table-border-clr);
+    --table-td-border: thin solid var(--table-border-clr);
   }
 
   &-hover {
@@ -179,6 +186,17 @@ table,
         color: var(--table-td-hover-clr);
         background-color: var(--table-td-hover-bg-clr);
       }
+    }
+  }
+
+  @each $key, $value in $colors {
+    &-#{$key} {
+      --table-bg-clr: var(--clr-#{$key}-50);
+      --table-bg-clr-alt: var(--clr-#{$key}-100);
+      --table-hover-bg-clr: var(--clr-#{$key}-200);
+      --table-border-clr: var(--clr-#{$key}-300);
+
+      --table-thead-th-bg-clr: var(--clr-#{$key}-500);
     }
   }
 }
