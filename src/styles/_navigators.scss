@@ -2,5 +2,62 @@
 .navigator {
   --navigator-gap: var(--size-v-400);
 
-  --navigator-item-clr: var(--clr-gray-800);
+  --navigator-item-padding: 0;
+  --navigator-item-padding-x: var(--navigator-item-padding);
+  --navigator-item-padding-y: var(--navigator-item-padding);
+
+  --navigator-item-clr: var(--clr-primary-500);
+  --navigator-item-bg-clr: transparent;
+  --navigator-item-border: none;
+  --navigator-item-border-clr: transparent;
+
+  --navigator-item-hover-clr: var(--clr-primary-700);
+  --navigator-item-hover-bg-clr: transparent;
+  --navigator-item-hover-border: none;
+  --navigator-item-hover-border-clr: transparent;
+
+  --navigator-item-active-clr: var(--clr-gray-500);
+  --navigator-item-active-bg-clr: transparent;
+  --navigator-item-active-border: none;
+  --navigator-item-active-border-clr: transparent;
+
+  --navigator-item-active-hover-clr: var(--clr-gray-500);
+  --navigator-item-active-hover-bg-clr: transparent;
+  --navigator-item-active-hover-border: none;
+  --navigator-item-active-hover-border-clr: transparent;
+
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--navigator-gap);
+
+  &-item {
+    color: var(--navigator-item-clr);
+    background-color: var(--navigator-item-bg-clr);
+    border: var(--navigator-item-border);
+    padding-top: var(--navigator-item-padding-y);
+    padding-right: var(--navigator-item-padding-x);
+    padding-bottom: var(--navigator-item-padding-y);
+    padding-left: var(--navigator-item-padding-x);
+
+    &:hover {
+      color: var(--navigator-item-hover-clr);
+      background-color: var(--navigator-item-hover-bg-clr);
+      border: var(--navigator-item-hover-border);
+    }
+
+    &[data-active="true"] {
+      cursor: default;
+      color: var(--navigator-item-active-clr);
+      background-color: var(--navigator-item-active-bg-clr);
+      border: var(--navigator-item-active-border);
+
+      &:hover {
+        color: var(--navigator-item-active-hover-clr);
+        background-color: var(--navigator-item-active-hover-bg-clr);
+        border: var(--navigator-item-active-hover-border);
+      }
+    }
+  }
 }
