@@ -27,20 +27,23 @@ code {
 
 /// Links
 a {
-  color: var(--clr-primary-500);
-  text-decoration: none;
+  --a-clr: var(--clr-primary-500);
+  --a-td: none;
+  --a-hover-clr: var(--clr-gray-500);
+  --a-hover-td: underline;
+
+  color: var(--a-clr);
+  text-decoration: var(--a-td);
 
   &:hover {
-    color: var(--clr-gray-500);
+    color: var(--a-hover-clr);
+    text-decoration: var(--a-hover-td);
   }
 
   @each $key, $value in $colors {
     &.link-#{$key} {
-      color: var(--clr-#{$key}-500);
-
-      &:hover {
-        color: var(--clr-#{$key}-700);
-      }
+      --a-clr: var(--clr-#{$key}-500);
+      --a-hover-clr: var(--clr-#{$key}-700);
     }
   }
 }
