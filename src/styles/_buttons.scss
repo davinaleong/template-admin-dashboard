@@ -1,5 +1,4 @@
 /// Buttons
-
 .btn {
   --btn-clr: var(--clr-gray-50);
   --btn-bg-clr: var(--clr-primary-500);
@@ -61,12 +60,46 @@
     cursor: not-allowed;
   }
 
+  @each $key, $value in $colors {
+    &-#{$key} {
+      --btn-clr: var(--clr-#{$key}-50);
+      --btn-bg-clr: var(--clr-#{$key}-500);
+      --btn-border: thin solid var(--clr-#{$key}-500);
+
+      --btn-hover-clr: var(--clr-#{$key}-50);
+      --btn-hover-bg-clr: var(--clr-#{$key}-700);
+      --btn-hover-border: thin solid var(--clr-#{$key}-500);
+    }
+  }
+
+  &-outline {
+    --btn-clr: var(--clr-primary-500);
+    --btn-bg-clr: var(--clr-gray-50);
+    --btn-border: thin solid var(--clr-primary-500);
+
+    --btn-hover-clr: var(--clr-gray-50);
+    --btn-hover-bg-clr: var(--clr-gray-500);
+    --btn-hover-border: thin solid var(--clr-gray-500);
+
+    @each $key, $value in $colors {
+      &-#{$key} {
+        --btn-clr: var(--clr-#{$key}-500);
+        --btn-bg-clr: var(--clr-gray-50);
+        --btn-border: thin solid var(--clr-#{$key}-500);
+
+        --btn-hover-clr: var(--clr-gray-50);
+        --btn-hover-bg-clr: var(--clr-#{$key}-500);
+        --btn-hover-border: thin solid var(--clr-#{$key}-500);
+      }
+    }
+  }
+
   &-link {
-    --btn-clr: var(--clr-gray-900);
+    --btn-clr: var(--clr-primary-500);
     --btn-bg-clr: transparent;
     --btn-border: none;
 
-    --btn-hover-clr: var(--clr-primary-500);
+    --btn-hover-clr: var(--clr-gray-500);
     --btn-hover-bg-clr: transparent;
     --btn-hover-border: none;
 
@@ -77,13 +110,18 @@
 
     @each $key, $value in $colors {
       &-#{$key} {
-        --btn-clr: var(--clr-#{$key}-700);
-        --btn-hover-clr: var(--clr-#{$key}-400);
-      }
-
-      &-#{$key}-light {
         --btn-clr: var(--clr-#{$key}-400);
+        --btn-bg-clr: transparent;
+        --btn-border: none;
+
         --btn-hover-clr: var(--clr-#{$key}-700);
+        --btn-hover-bg-clr: transparent;
+        --btn-hover-border: none;
+
+        --btn-padding: var(--size-v-0);
+
+        --btn-tt: normal;
+        --btn-fw: normal;
       }
     }
   }
@@ -122,38 +160,6 @@
     position: absolute;
     z-index: 3;
     isolation: isolate;
-  }
-
-  @each $key, $value in $colors {
-    &-#{$key} {
-      --btn-clr: var(--clr-#{$key}-50);
-      --btn-bg-clr: var(--clr-#{$key}-500);
-      --btn-border: thin solid var(--clr-gray-200);
-
-      --btn-hover-clr: var(--clr-#{$key}-50);
-      --btn-hover-bg-clr: var(--clr-#{$key}-700);
-      --btn-hover-border: thin solid var(--clr-gray-200);
-    }
-
-    .-#{$key}-light {
-      --btn-clr: var(--clr-#{$key}-900);
-      --btn-bg-clr: var(--clr-#{$key}-100);
-      --btn-border: var(--clr-#{$key}-100);
-
-      --btn-hover-clr: var(--clr-#{$key}-900);
-      --btn-hover-bg-clr: var(--clr-#{$key}-300);
-      --btn-hover-border: var(--clr-#{$key}-300);
-    }
-
-    .-#{$key}-outline {
-      --btn-clr: var(--clr-#{$key}-500);
-      --btn-bg-clr: var(--clr-gray-50);
-      --btn-border: thin solid var(--clr-#{$key}-500);
-
-      --btn-hover-clr: var(--clr-#{$key}-700);
-      --btn-hover-bg-clr: var(--clr-gray-50);
-      --btn-hover-border: thin solid var(--clr-#{$key}-700);
-    }
   }
 
   &-full {
