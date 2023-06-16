@@ -97,30 +97,36 @@ body,
 }
 
 /// Base - Containers
-.container-fluid {
-  --container-padding-inline: var(--size-v-400);
+.wrapper-fluid {
+  --wrapper-padding-inline: var(--size-v-400);
 
-  container-name: containerFluid;
+  container-name: wrapperFluid;
   container-type: inline-size;
-  padding-inline: var(--container-padding-inline);
+  padding-inline: var(--wrapper-padding-inline);
   margin-inline: auto;
   position: relative;
 }
 
-.container {
-  --container-padding-inline: var(--size-v-400);
-  --container-width: #{breakpoint("lg")};
+.wrapper {
+  --wrapper-padding-inline: var(--size-v-400);
+  --wrapper-width: #{breakpoint("lg")};
 
-  container-name: container;
+  container-name: wrapper;
   container-type: inline-size;
-  padding-inline: var(--container-padding-inline);
+  // padding-inline: var(--wrapper-padding-inline);
   margin-inline: auto;
-  width: css-min("100%, var(--container-width)");
+  width: min(100% - var(--wrapper-padding-inline), var(--wrapper-width));
   position: relative;
 }
 
-.container-no-padding {
-  --container-padding-inline: var(--size-v-0);
+.wrapper-no-padding {
+  --wrapper-padding-inline: var(--size-v-0);
+}
+
+.flow > * + * {
+  --flow-spacer: var(--size-f-400);
+
+  margin-top: var(--flow-spacer);
 }
 
 img {
