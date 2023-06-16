@@ -19,6 +19,7 @@
   --btn-offset: var(--size-v-400);
   --btn-opacity: 1;
   --btn-td: none;
+  --btn-width: 10ch;
 
   display: inline-flex;
   align-items: center;
@@ -39,6 +40,7 @@
   opacity: var(--btn-opacity);
   text-decoration: var(--btn-td);
   cursor: pointer;
+  min-width: var(--btn-width);
 
   &:hover {
     color: var(--btn-hover-clr);
@@ -107,6 +109,7 @@
 
     --btn-tt: normal;
     --btn-fw: normal;
+    --btn-width: auto;
 
     @each $key, $value in $colors {
       &-#{$key} {
@@ -122,6 +125,7 @@
 
         --btn-tt: normal;
         --btn-fw: normal;
+        --btn-width: auto;
       }
     }
   }
