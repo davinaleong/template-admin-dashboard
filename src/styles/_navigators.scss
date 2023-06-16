@@ -1,20 +1,21 @@
 /// Navigators
 .navigator {
-  --navigator-gap: var(--size-v-400);
+  --navigator-gap: var(--size-v-200);
 
   --navigator-item-padding: 0;
   --navigator-item-padding-x: var(--navigator-item-padding);
   --navigator-item-padding-y: var(--navigator-item-padding);
+  --navigator-item-br: 0;
 
   --navigator-item-clr: var(--clr-primary-500);
   --navigator-item-bg-clr: transparent;
-  --navigator-item-border: none;
   --navigator-item-border-clr: transparent;
+  --navigator-item-border: none;
 
   --navigator-item-hover-clr: var(--clr-primary-700);
   --navigator-item-hover-bg-clr: transparent;
-  --navigator-item-hover-border: none;
   --navigator-item-hover-border-clr: transparent;
+  --navigator-item-hover-border: none;
 
   --navigator-item-active-clr: var(--clr-gray-500);
   --navigator-item-active-bg-clr: transparent;
@@ -23,8 +24,8 @@
 
   --navigator-item-active-hover-clr: var(--clr-gray-500);
   --navigator-item-active-hover-bg-clr: transparent;
-  --navigator-item-active-hover-border: none;
   --navigator-item-active-hover-border-clr: transparent;
+  --navigator-item-active-hover-border: none;
 
   list-style: none;
   padding-left: 0;
@@ -35,29 +36,75 @@
   &-item {
     color: var(--navigator-item-clr);
     background-color: var(--navigator-item-bg-clr);
-    border: var(--navigator-item-border);
+    border-top: var(--navigator-item-border);
+    border-right: var(--navigator-item-border);
+    border-bottom: var(--navigator-item-border);
+    border-left: var(--navigator-item-border);
     padding-top: var(--navigator-item-padding-y);
     padding-right: var(--navigator-item-padding-x);
     padding-bottom: var(--navigator-item-padding-y);
     padding-left: var(--navigator-item-padding-x);
+    border-radius: var(--navigator-item-br);
 
     &:hover {
       color: var(--navigator-item-hover-clr);
       background-color: var(--navigator-item-hover-bg-clr);
-      border: var(--navigator-item-hover-border);
+      border-top: var(--navigator-item-hover-border);
+      border-right: var(--navigator-item-hover-border);
+      border-bottom: var(--navigator-item-hover-border);
+      border-left: var(--navigator-item-hover-border);
     }
 
     &[data-active="true"] {
       cursor: default;
       color: var(--navigator-item-active-clr);
       background-color: var(--navigator-item-active-bg-clr);
-      border: var(--navigator-item-active-border);
+      border-top: var(--navigator-item-active-border);
+      border-right: var(--navigator-item-active-border);
+      border-bottom: var(--navigator-item-active-border);
+      border-left: var(--navigator-item-active-border);
 
       &:hover {
         color: var(--navigator-item-active-hover-clr);
         background-color: var(--navigator-item-active-hover-bg-clr);
-        border: var(--navigator-item-active-hover-border);
+        border-top: var(--navigator-item-active-hover-border);
+        border-right: var(--navigator-item-active-hover-border);
+        border-bottom: var(--navigator-item-active-hover-border);
+        border-left: var(--navigator-item-active-hover-border);
       }
     }
+  }
+
+  &-buttons,
+  &-pills {
+    --navigator-item-padding-x: var(--size-v-300);
+    --navigator-item-padding-y: var(--size-v-200);
+
+    --navigator-item-clr: var(--clr-gray-50);
+    --navigator-item-bg-clr: var(--clr-primary-500);
+    --navigator-item-border-clr: var(--clr-primary-500);
+    --navigator-item-border: thin solid var(--navigator-item-border-clr);
+
+    --navigator-item-hover-clr: var(--clr-gray-50);
+    --navigator-item-hover-bg-clr: var(--clr-primary-700);
+    --navigator-item-hover-border-clr: var(--clr-primary-700);
+    --navigator-item-hover-border: thin solid
+      var(--navigator-item-hover-border-clr);
+
+    --navigator-item-active-clr: var(--clr-gray-50);
+    --navigator-item-active-bg-clr: var(--clr-gray-500);
+    --navigator-item-active-border-clr: var(--clr-gray-500);
+    --navigator-item-active-border: thin solid
+      var(--navigator-item-active-border-clr);
+
+    --navigator-item-active-hover-clr: var(--clr-gray-50);
+    --navigator-item-active-hover-bg-clr: var(--clr-gray-500);
+    --navigator-item-active-hover-border-clr: var(--clr-gray-500);
+    --navigator-item-active-hover-border: thin solid
+      var(--navigator-item-active-hover-border-clr);
+  }
+
+  &-pills {
+    --navigator-item-br: 100vmax;
   }
 }
