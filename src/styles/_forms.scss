@@ -1,0 +1,56 @@
+/// Forms
+
+.form-field {
+  --form-field-width: 200ch;
+  --form-field-height: 1rem;
+  --form-field-br: 0;
+  --form-field-clr: var(--clr-gray-800);
+  --form-field-bg-clr: var(--clr-gray-50);
+  --form-field-border-clr: var(--clr-gray-900);
+  --form-field-border: thin solid var(--form-field-border-clr);
+  --form-field-border-t: var(--form-field-border);
+  --form-field-border-r: var(--form-field-border);
+  --form-field-border-l: var(--form-field-border);
+  --form-field-border-b: var(--form-field-border);
+
+  display: block;
+  width: 100%;
+  max-width: var(--form-field-width);
+  min-height: var(--form-field-height);
+  color: var(--form-field-clr);
+  background-color: var(--form-field-bg-clr);
+  border-radius: var(--form-field-br);
+  border-top: var(--form-field-border-t);
+  border-right: var(--form-field-border-r);
+  border-left: var(--form-field-border-l);
+  border-bottom: var(--form-field-border-b);
+}
+
+input.form-field {
+  --form-field-bg-clr: transparent;
+
+  --form-field-border-t: none;
+  --form-field-border-r: none;
+  --form-field-border-l: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+select.form-field {
+  --form-field-border: none;
+}
+
+textarea.form-field {
+  --form-field-border: thin solid var(--form-field-border-clr);
+}
+
+.group-radio-check {
+  --group-radio-check-gap: var(--size-v-200);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--group-radio-check-gap);
+}
