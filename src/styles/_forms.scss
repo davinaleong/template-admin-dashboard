@@ -2,7 +2,7 @@
 
 .form-field {
   --form-field-width: 200ch;
-  --form-field-height: 1rem;
+  --form-field-height: var(--fz-400);
   --form-field-br: 0;
   --form-field-clr: var(--clr-gray-800);
   --form-field-bg-clr: var(--clr-gray-50);
@@ -55,10 +55,72 @@ textarea.form-field {
   gap: var(--group-radio-check-gap);
 }
 
+.form-label {
+  --form-label-clr: var(--clr-gray-800);
+  --form-label-bg-clr: var(--clr-gray-200);
+  --form-label-padding: var(--size-v-200);
+  --form-label-width: 15ch;
+
+  color: var(--form-label-clr);
+  background-color: var(--form-label-bg-clr);
+  min-width: var(--form-label-width);
+  display: block;
+  padding-top: var(--form-label-padding);
+  padding-right: var(--form-label-padding);
+  padding-bottom: var(--form-label-padding);
+  padding-left: var(--form-label-padding);
+}
+
+.form-field-wrapper {
+  --form-field-wrapper-bg-clr: var(--clr-gray-100);
+  --form-field-wrapper-padding: var(--size-v-200);
+
+  background-color: var(--form-field-wrapper-bg-clr);
+  padding-top: var(--form-field-wrapper-padding);
+  padding-right: var(--form-field-wrapper-padding);
+  padding-bottom: var(--form-field-wrapper-padding);
+  padding-left: var(--form-field-wrapper-padding);
+}
+
 .form-group {
   --form-group-label-clr: var(--clr-gray-800);
   --form-group-label-bg-clr: var(--clr-gray-200);
-  --form-group-label-fs: var(--fz-400);
+  --form-group-label-width: 15ch;
 
   --form-group-field-wrapper-bg-clr: var(--clr-gray-100);
+  --form-group-padding: var(--size-v-200);
+
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr;
+
+  .form-label {
+    --form-label-clr: var(--form-group-label-clr);
+    --form-label-bg-clr: var(--form-group-label-bg-clr);
+    --form-label-padding: var(--form-group-padding);
+    --form-label-width: var(--form-group-label-width);
+  }
+
+  .form-field-wrapper {
+    --form-field-wrapper-bg-clr: var(--form-group-field-wrapper-bg-clr);
+    --form-field-wrapper-padding: var(--form-group-padding);
+  }
+
+  @each $key, $value in $colors {
+    @each $tint-key, $tint-value in $value {
+      &-#{$key} {
+        --form-group-label-clr: var(--clr-gray-800);
+        --form-group-label-bg-clr: var(--clr-#{$key}-300);
+
+        --form-group-field-wrapper-bg-clr: var(--clr-#{$key}-200);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: breakpoint("md")) {
+  .form-group {
+    grid-template-columns: var(--form-group-label-width) auto;
+    grid-template-rows: auto;
+  }
 }

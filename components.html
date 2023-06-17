@@ -26,7 +26,7 @@
         </div>
       </header>
 
-      <main class="flow p-f-y-400">
+      <main class="p-f-y-400 flow container">
         <h2 class="fz-700 fw-bold">Components</h2>
         <ul class="navigator">
           <li><a href="#buttons" class="navigator-item">Buttons</a></li>
@@ -483,157 +483,162 @@
             <a href="#" class="navigator-item" data-active="true">Active</a>
           </li>
         </ul>
+
+        <h3 id="forms" class="fz-600">Forms</h3>
+        <h4 class="fz-500">Form Fields</h4>
+        <p>Input</p>
+        <div>
+          <input type="text" name="name" id="name" class="form-field" />
+        </div>
+
+        <p>Select</p>
+        <div>
+          <select name="names" id="names" class="form-field">
+            <option value="John Doe">John Doe</option>
+            <option value="Jane Doe">Jane Doe</option>
+            <option value="Carl Jones">Carl Jones</option>
+          </select>
+        </div>
+
+        <p>Textarea</p>
+        <div>
+          <textarea
+            name="name"
+            id="name"
+            class="form-field"
+            rows="4"
+          ></textarea>
+        </div>
+
+        <p>Radio</p>
+        <div>
+          <input type="radio" name="choice" id="choice1" class="form-field" />
+        </div>
+
+        <p>Group Radio</p>
+        <div class="group-radio-check">
+          <input
+            type="radio"
+            name="multi-choice"
+            id="choice1"
+            class="form-field"
+          />
+          <input
+            type="radio"
+            name="multi-choice"
+            id="choice2"
+            class="form-field"
+          />
+          <input
+            type="radio"
+            name="multi-choice"
+            id="choice3"
+            class="form-field"
+          />
+        </div>
+
+        <p>Checkbox</p>
+        <div>
+          <input type="checkbox" name="accept" id="accept" class="form-field" />
+        </div>
+
+        <p>Group Checkboxes</p>
+        <div class="group-radio-check">
+          <input
+            type="checkbox"
+            name="accept[]"
+            id="accept1"
+            class="form-field"
+          />
+          <input
+            type="checkbox"
+            name="accept[]"
+            id="accept2"
+            class="form-field"
+          />
+          <input
+            type="checkbox"
+            name="accept[]"
+            id="accept3"
+            class="form-field"
+          />
+        </div>
+
+        <h4 class="fz-500">Field Group</h4>
+        <p>Default</p>
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <div class="form-field-wrapper">
+            <input type="text" name="name" id="name" class="form-field" />
+          </div>
+        </div>
+
+        <p>Primary</p>
+        <div class="form-group form-group-primary">
+          <label for="name" class="form-label">Name</label>
+          <div class="form-field-wrapper">
+            <input type="text" name="name" id="name" class="form-field" />
+          </div>
+        </div>
+
+        <p>Secondary</p>
+        <div class="form-group form-group-secondary">
+          <label for="name" class="form-label">Name</label>
+          <div class="form-field-wrapper">
+            <input type="text" name="name" id="name" class="form-field" />
+          </div>
+        </div>
+
+        <p>Danger</p>
+        <div class="form-group form-group-danger">
+          <label for="name" class="form-label">Name</label>
+          <div class="form-field-wrapper">
+            <input type="text" name="name" id="name" class="form-field" />
+          </div>
+        </div>
+
+        <p>Success</p>
+        <div class="form-group form-group-success">
+          <label for="name" class="form-label">Name</label>
+          <div class="form-field-wrapper">
+            <input type="text" name="name" id="name" class="form-field" />
+          </div>
+        </div>
+
+        <p>Accent 1</p>
+        <div class="form-group form-group-accent-1">
+          <label for="name" class="form-label">Name</label>
+          <div class="form-field-wrapper">
+            <input type="text" name="name" id="name" class="form-field" />
+          </div>
+        </div>
+
+        <p>Accent 2</p>
+        <div class="form-group form-group-accent-2">
+          <label for="name" class="form-label">Name</label>
+          <div class="form-field-wrapper">
+            <input type="text" name="name" id="name" class="form-field" />
+          </div>
+        </div>
+
+        <p>Accent 3</p>
+        <div class="form-group form-group-accent-3">
+          <label for="name" class="form-label">Name</label>
+          <div class="form-field-wrapper">
+            <input type="text" name="name" id="name" class="form-field" />
+          </div>
+        </div>
+
+        <p>Gray</p>
+        <div class="form-group form-group-gray">
+          <label for="name" class="form-label">Name</label>
+          <div class="form-field-wrapper">
+            <input type="text" name="name" id="name" class="form-field" />
+          </div>
+        </div>
+
+        <h4 class="fz-500">Fieldset</h4>
       </main>
-
-      <h3 id="forms" class="fz-600">Forms</h3>
-      <h4 class="fz-500">Form Fields</h4>
-      <p>Input</p>
-      <div>
-        <input type="text" name="name" id="name" class="form-field" />
-      </div>
-
-      <p>Select</p>
-      <div>
-        <select name="names" id="names" class="form-field">
-          <option value="John Doe">John Doe</option>
-          <option value="Jane Doe">Jane Doe</option>
-          <option value="Carl Jones">Carl Jones</option>
-        </select>
-      </div>
-
-      <p>Textarea</p>
-      <div>
-        <textarea name="name" id="name" class="form-field" rows="4"></textarea>
-      </div>
-
-      <p>Radio</p>
-      <div>
-        <input type="radio" name="choice" id="choice1" class="form-field" />
-      </div>
-
-      <p>Group Radio</p>
-      <div class="group-radio-check">
-        <input
-          type="radio"
-          name="multi-choice"
-          id="choice1"
-          class="form-field"
-        />
-        <input
-          type="radio"
-          name="multi-choice"
-          id="choice2"
-          class="form-field"
-        />
-        <input
-          type="radio"
-          name="multi-choice"
-          id="choice3"
-          class="form-field"
-        />
-      </div>
-
-      <p>Checkbox</p>
-      <div>
-        <input type="checkbox" name="accept" id="accept" class="form-field" />
-      </div>
-
-      <p>Group Checkboxes</p>
-      <div class="group-radio-check">
-        <input
-          type="checkbox"
-          name="accept[]"
-          id="accept1"
-          class="form-field"
-        />
-        <input
-          type="checkbox"
-          name="accept[]"
-          id="accept2"
-          class="form-field"
-        />
-        <input
-          type="checkbox"
-          name="accept[]"
-          id="accept3"
-          class="form-field"
-        />
-      </div>
-
-      <h4 class="fz-500">Field Group</h4>
-      <p>Default</p>
-      <div class="form-group">
-        <label for="name" class="form-label">Name</label>
-        <div class="form-field-wrapper">
-          <input type="text" name="name" id="name" class="form-field" />
-        </div>
-      </div>
-
-      <p>Primary</p>
-      <div class="form-group form-group-primary">
-        <label for="name" class="form-label">Name</label>
-        <div class="form-field-wrapper">
-          <input type="text" name="name" id="name" class="form-field" />
-        </div>
-      </div>
-
-      <p>Secondary</p>
-      <div class="form-group form-group-secondary">
-        <label for="name" class="form-label">Name</label>
-        <div class="form-field-wrapper">
-          <input type="text" name="name" id="name" class="form-field" />
-        </div>
-      </div>
-
-      <p>Danger</p>
-      <div class="form-group form-group-danger">
-        <label for="name" class="form-label">Name</label>
-        <div class="form-field-wrapper">
-          <input type="text" name="name" id="name" class="form-field" />
-        </div>
-      </div>
-
-      <p>Success</p>
-      <div class="form-group form-group-success">
-        <label for="name" class="form-label">Name</label>
-        <div class="form-field-wrapper">
-          <input type="text" name="name" id="name" class="form-field" />
-        </div>
-      </div>
-
-      <p>Accent 1</p>
-      <div class="form-group form-group-accent-1">
-        <label for="name" class="form-label">Name</label>
-        <div class="form-field-wrapper">
-          <input type="text" name="name" id="name" class="form-field" />
-        </div>
-      </div>
-
-      <p>Accent 2</p>
-      <div class="form-group form-group-accent-2">
-        <label for="name" class="form-label">Name</label>
-        <div class="form-field-wrapper">
-          <input type="text" name="name" id="name" class="form-field" />
-        </div>
-      </div>
-
-      <p>Accent 3</p>
-      <div class="form-group form-group-accent-3">
-        <label for="name" class="form-label">Name</label>
-        <div class="form-field-wrapper">
-          <input type="text" name="name" id="name" class="form-field" />
-        </div>
-      </div>
-
-      <p>Gray</p>
-      <div class="form-group form-group-gray">
-        <label for="name" class="form-label">Name</label>
-        <div class="form-field-wrapper">
-          <input type="text" name="name" id="name" class="form-field" />
-        </div>
-      </div>
-
-      <h4 class="fz-500">Fieldset</h4>
     </div>
   </body>
 </html>
