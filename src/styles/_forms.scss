@@ -54,3 +54,11 @@ textarea.form-field {
   flex-wrap: wrap;
   gap: var(--group-radio-check-gap);
 }
+
+.form-group {
+  --form-group-label-clr: var(--clr-gray-800);
+  --form-group-label-bg-clr: var(--clr-gray-200);
+  --form-group-label-fs: var(--fz-400);
+
+  --form-group-field-wrapper-bg-clr: var(--clr-gray-100);
+}
