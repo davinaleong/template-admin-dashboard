@@ -81,11 +81,6 @@ body,
 
 /// Base - Main
 .main {
-  container-name: main;
-  container-type: inline-size;
-  padding-left: 0;
-  padding-right: 0;
-
   &-flex {
     display: flex;
     align-items: center;
@@ -113,8 +108,6 @@ body,
   --wrapper-padding-inline: var(--size-v-400);
   --wrapper-width: #{breakpoint("lg")};
 
-  container-name: wrapper;
-  container-type: inline-size;
   // padding-inline: var(--wrapper-padding-inline);
   margin-inline: auto;
   width: min(100% - var(--wrapper-padding-inline), var(--wrapper-width));
@@ -125,6 +118,11 @@ body,
   --wrapper-padding-inline: var(--size-v-0);
 }
 
+.container {
+  container-name: container;
+  container-type: inline-size;
+}
+
 .flow > * + * {
   --flow-spacer: var(--size-f-400);
 
@@ -133,11 +131,4 @@ body,
 
 img {
   cursor: pointer;
-}
-
-@media screen and (min-width: #{breakpoint("md")}) {
-  .main {
-    padding-left: var(--size-v-400);
-    padding-right: var(--size-v-400);
-  }
 }
