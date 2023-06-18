@@ -512,56 +512,95 @@
 
         <p>Radio</p>
         <div>
-          <input type="radio" name="choice" id="choice1" class="form-field" />
+          <label for="choice1" class="form-radio-check-wrapper">
+            Choice 1
+            <input type="radio" name="radio" id="choice1" class="form-field" />
+            <span class="form-radio"></span>
+          </label>
         </div>
 
         <p>Group Radio</p>
-        <div class="group-radio-check">
-          <input
-            type="radio"
-            name="multi-choice"
-            id="choice1"
-            class="form-field"
-          />
-          <input
-            type="radio"
-            name="multi-choice"
-            id="choice2"
-            class="form-field"
-          />
-          <input
-            type="radio"
-            name="multi-choice"
-            id="choice3"
-            class="form-field"
-          />
+        <div class="group-radio-check-wrapper">
+          <label for="choice1" class="form-radio-check-wrapper">
+            Choice 1
+            <input
+              type="radio"
+              name="groupRadio"
+              id="choice1"
+              class="form-field"
+            />
+            <span class="form-radio"></span>
+          </label>
+          <label for="choice2" class="form-radio-check-wrapper">
+            Choice 2
+            <input
+              type="radio"
+              name="groupRadio"
+              id="choice2"
+              class="form-field"
+              checked
+            />
+            <span class="form-radio"></span>
+          </label>
+          <label for="choice3" class="form-radio-check-wrapper">
+            Choice 3
+            <input
+              type="radio"
+              name="groupRadio"
+              id="choice3"
+              class="form-field"
+            />
+            <span class="form-radio"></span>
+          </label>
         </div>
 
         <p>Checkbox</p>
         <div>
-          <input type="checkbox" name="accept" id="accept" class="form-field" />
+          <label for="choice1" class="form-radio-check-wrapper">
+            Choice 1
+            <input
+              type="checkbox"
+              name="checkbox"
+              id="choice1"
+              class="form-field"
+            />
+            <span class="form-checkbox"></span>
+          </label>
         </div>
 
         <p>Group Checkboxes</p>
         <div class="group-radio-check">
-          <input
-            type="checkbox"
-            name="accept[]"
-            id="accept1"
-            class="form-field"
-          />
-          <input
-            type="checkbox"
-            name="accept[]"
-            id="accept2"
-            class="form-field"
-          />
-          <input
-            type="checkbox"
-            name="accept[]"
-            id="accept3"
-            class="form-field"
-          />
+          <label for="choice1" class="form-radio-check-wrapper">
+            Choice 1
+            <input
+              type="checkbox"
+              name="groupCheckboxes[]"
+              id="choice1"
+              class="form-field"
+              checked
+            />
+            <span class="form-checkbox"></span>
+          </label>
+          <label for="choice1" class="form-radio-check-wrapper">
+            Choice 2
+            <input
+              type="checkbox"
+              name="groupCheckboxes[]"
+              id="choice2"
+              class="form-field"
+            />
+            <span class="form-checkbox"></span>
+          </label>
+          <label for="choice1" class="form-radio-check-wrapper">
+            Choice 3
+            <input
+              type="checkbox"
+              name="groupCheckboxes[]"
+              id="choice3"
+              class="form-field"
+            />
+            <span class="form-checkbox"></span>
+          </label>
         </div>
 
         <h4 class="fz-500">Field Group</h4>
