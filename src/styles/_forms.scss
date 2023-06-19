@@ -48,6 +48,7 @@ textarea.form-field {
 
   --form-radio-checkbox-wrapper-size: var(--fz-400);
 
+  --form-radio-checkbox-wrapper-clr: var(--clr-gray-800);
   --form-radio-checkbox-wrapper-bg-clr: var(--clr-gray-50);
   --form-radio-checkbox-wrapper-border-clr: var(--clr-gray-800);
   --form-radio-checkbox-wrapper-border: thin solid var(--form-radio-checkbox-wrapper-border-clr);
@@ -56,11 +57,22 @@ textarea.form-field {
   --form-radio-checkbox-wrapper-check-indicator-width: var(--size-v-300);
   --form-radio-checkbox-wrapper-check-indicator-height: var(--size-v-200);
   --form-radio-checkbox-wrapper-indicator-clr: var(--clr-gray-50);
-  --form-radio-checkbox-wrapper-indicator-checked-clr: var(--clr-gray-900);
+  --form-radio-checkbox-wrapper-indicator-checked-clr: var(--clr-gray-800);
 
   display: flex;
   align-items: center;
   gap: var(--form-radio-checkbox-wrapper-gap);
+  color: var(--form-radio-checkbox-wrapper-clr);
+
+  @each $key, $value in $colors {
+    &-#{$key} {
+      --form-radio-checkbox-wrapper-clr: var(--clr-#{$key}-800);
+      --form-radio-checkbox-wrapper-bg-clr: var(--clr-#{$key}-50);
+      --form-radio-checkbox-wrapper-border-clr: var(--clr-#{$key}-500);
+      --form-radio-checkbox-wrapper-indicator-clr: var(--clr-#{$key}-50);
+      --form-radio-checkbox-wrapper-indicator-checked-clr: var(--clr-#{$key}-500);
+    }
+  }
 }
 
 .group-radio-checkbox-wrapper {
