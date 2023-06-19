@@ -1,4 +1,42 @@
 /// Forms
+fieldset {
+  --fieldset-border: none;
+
+  border: var(--fieldset-border);
+}
+
+legend {
+  --legend-fz: var(--fz-400);
+  --legend-fw: var(--fw-bold);
+  --legend-clr: var(--clr-gray-800);
+  --legend-border: none;
+  --legend-margin: var(--size-v-200);
+
+  --legend-arrow-size: var(--fz-200);
+  --legend-arrow-clr: var(--clr-gray-800);
+
+  font-size: var(--legend-fz);
+  font-weight: var(--legend-fw);
+  color: var(--legend-clr);
+  border: var(--legend-border);
+  margin-bottom: var(--legend-margin);
+  position: relative;
+  width: 100%;
+  display: block;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: var(--legend-arrow-size);
+    height: var(--legend-arrow-size);
+    border-left: 0.1em solid var(--legend-arrow-clr);
+    border-bottom: 0.1em solid var(--legend-arrow-clr);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: center;
+  }
+}
 
 .form-field {
   --form-field-width: 200ch;
