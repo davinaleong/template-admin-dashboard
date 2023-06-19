@@ -80,6 +80,75 @@ input.form-field[type="radio"]:checked ~ .form-radio::before {
   background-color: var(--form-radio-indicator-checked-clr);
 }
 
+input.form-field[type="radio"] ~ .form-radio {
+  --form-radio-size: var(--fz-400);
+
+  --form-radio-bg-clr: var(--clr-gray-50);
+  --form-radio-border-clr: var(--clr-gray-900);
+  --form-radio-border: thin solid var(--form-radio-border-clr);
+
+  --form-radio-indicator-size: 0.2em;
+  --form-radio-indicator-clr: var(--clr-gray-50);
+  --form-radio-indicator-checked-clr: var(--clr-gray-900);
+
+  display: block;
+  width: var(--form-radio-size);
+  height: var(--form-radio-size);
+  background-color: var(--form-radio-bg-clr);
+  border: var(--form-radio-border);
+  border-radius: 50%;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: var(--form-radio-indicator-size);
+    background-color: var(--form-radio-indicator-clr);
+    border-radius: 50%;
+  }
+}
+
+input.form-field[type="radio"]:checked ~ .form-radio::before {
+  background-color: var(--form-radio-indicator-checked-clr);
+}
+
+input.form-field[type="checkbox"] ~ .form-checkbox {
+  --form-checkbox-size: var(--fz-400);
+
+  --form-checkbox-bg-clr: var(--clr-gray-50);
+  --form-checkbox-border-clr: var(--clr-gray-900);
+  --form-checkbox-border: thin solid var(--form-checkbox-border-clr);
+
+  --form-checkbox-indicator-width: 0.4em;
+  --form-checkbox-indicator-height: 0.2em;
+  --form-checkbox-indicator-clr: var(--clr-gray-900);
+  --form-checkbox-indicator-checked-clr: var(--clr-danger-500);
+
+  display: block;
+  width: var(--form-checkbox-size);
+  height: var(--form-checkbox-size);
+  background-color: var(--form-checkbox-bg-clr);
+  border: var(--form-checkbox-border);
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--form-checkbox-indicator-width);
+    height: var(--form-checkbox-indicator-height);
+    transform: translate(-50%, -50%);
+    background-color: var(--form-checkbox-indicator-clr);
+  }
+}
+
+input.form-field[type="checkbox"]:checked ~ .form-checkbox::before {
+  background-color: var(--form-checkbox-indicator-checked-clr);
+}
+
 select.form-field {
   --form-field-border: none;
 }
