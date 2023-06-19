@@ -120,8 +120,8 @@ input.form-field[type="checkbox"] ~ .form-checkbox {
   --form-checkbox-border-clr: var(--clr-gray-900);
   --form-checkbox-border: thin solid var(--form-checkbox-border-clr);
 
-  --form-checkbox-indicator-width: 0.4em;
-  --form-checkbox-indicator-height: 0.2em;
+  --form-checkbox-indicator-width: var(--size-v-300);
+  --form-checkbox-indicator-height: var(--size-v-200);
   --form-checkbox-indicator-clr: var(--clr-gray-900);
   --form-checkbox-indicator-checked-clr: var(--clr-danger-500);
 
@@ -141,12 +141,14 @@ input.form-field[type="checkbox"] ~ .form-checkbox {
     width: var(--form-checkbox-indicator-width);
     height: var(--form-checkbox-indicator-height);
     transform: translate(-50%, -50%);
-    background-color: var(--form-checkbox-indicator-clr);
+    border-left: 0.1em solid var(--form-checkbox-indicator-clr);
+    border-bottom: 0.1em solid var(--form-checkbox-indicator-clr);
   }
 }
 
 input.form-field[type="checkbox"]:checked ~ .form-checkbox::before {
-  background-color: var(--form-checkbox-indicator-checked-clr);
+  border-left: 0.1em solid var(--form-checkbox-indicator-checked-clr);
+  border-bottom: 0.1em solid var(--form-checkbox-indicator-checked-clr);
 }
 
 select.form-field {
