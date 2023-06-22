@@ -3,6 +3,31 @@ fieldset {
   --fieldset-border: none;
 
   border: var(--fieldset-border);
+
+  &.fieldset {
+    @each $key, $value in $colors {
+      &-#{$key} {
+        legend {
+          --legend-clr: var(--clr-#{$key}-800);
+          --legend-arrow-clr: var(--clr-#{$key}-800);
+        }
+      }
+    }
+  }
+
+  .content {
+    display: none;
+  }
+  
+  &[aria-expanded="true"] {
+    legend::before {
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+
+    .content {
+      display: block;
+    }
+  }
 }
 
 legend {
@@ -23,6 +48,7 @@ legend {
   position: relative;
   width: 100%;
   display: block;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -35,6 +61,7 @@ legend {
     border-bottom: 0.1em solid var(--legend-arrow-clr);
     transform: translate(-50%, -50%) rotate(-45deg);
     transform-origin: center;
+    transition: transform 0.3s ease-in-out;
   }
 }
 
