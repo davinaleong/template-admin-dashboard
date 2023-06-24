@@ -1,0 +1,128 @@
+/// Cards
+.card {
+  --card-clr: var(--clr-gray-800);
+  --card-bg-clr: var(--clr-gray-200);
+  --card-border-clr: var(--clr-gray-200);
+  --card-border: thin solid var(--card-border-clr);
+  --card-hover-clr: var(--clr-gray-800);
+  --card-hover-bg-clr: var(--clr-primary-300);
+  --card-hover-border-clr: var(--clr-primary-300);
+  --card-hover-border: thin solid var(--card-border-clr);
+  --card-padding: var(--size-v-400);
+
+  --card-title-fz: var(--fz-600);
+
+  --card-badge-fz: var(--fz-400);
+  --card-badge-clr: var(--clr-gray-50);
+  --card-badge-bg-clr: var(--clr-primary-500);
+  --card-badge-border-clr: var(--clr-primary-500);
+  --card-badge-border: thin solid var(--card-badge-border-clr);
+  --card-badge-padding-y: var(--size-v-100);
+  --card-badge-padding-x: var(--size-v-300);
+  --card-badge-width: 5ch;
+
+  --card-list-padding: var(--size-v-100);
+  --card-list-border-clr: var(--clr-gray-800);
+  --card-list-border: thin solid var(--card-list-border-clr);
+
+  --card-date-fz: var(--fz-300);
+  --card-date-fs: italic;
+
+  display: block;
+  color: var(--card-clr);
+  background-color: var(--card-bg-clr);
+  border: var(--card-border);
+  padding-top: var(--card-padding);
+  padding-right: var(--card-padding);
+  padding-bottom: var(--card-padding);
+  padding-left: var(--card-padding);
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--card-hover-clr);
+    background-color: var(--card-hover-bg-clr);
+    border: var(--card-hover-border);
+    text-decoration: none;
+  }
+
+  &__title {
+    font-size: var(--card-title-fz);
+  }
+
+  &__badge {
+    color: var(--card-badge-clr);
+    background-color: var(--card-badge-bg-clr);
+    border: var(--card-badge-border);
+    border-radius: 100vmax;
+    padding-top: var(--card-badge-padding-y);
+    padding-right: var(--card-badge-padding-x);
+    padding-bottom: var(--card-badge-padding-y);
+    padding-left: var(--card-badge-padding-x);
+    position: absolute;
+    top: var(--size-v-400);
+    right: var(--size-v-400);
+    min-width: var(--card-badge-width);
+    margin-top: 0;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: var(--card-list-padding);
+    border-left: var(--card-list-border);
+  }
+
+  &__date {
+    font-size: var(--card-date-fz);
+    font-style: var(--card-date-fs);
+  }
+
+  @each $key, $value in $colors {
+    &-#{$key} {
+      --card-clr: var(--clr-gray-800);
+      --card-bg-clr: var(--clr-#{$key}-200);
+      --card-border-clr: var(--clr-#{$key}-200);
+      --card-hover-clr: var(--clr-gray-800);
+      --card-hover-bg-clr: var(--clr-#{$key}-300);
+      --card-hover-border-clr: var(--clr-#{$key}-300);
+
+      --card-badge-clr: var(--clr-gray-50);
+      --card-badge-bg-clr: var(--clr-#{$key}-500);
+      --card-badge-border-clr: var(--clr-#{$key}-500);
+
+      --card-list-border-clr: var(--clr-#{$key}-800);
+    }
+  }
+
+  &-outline {
+    --card-clr: var(--clr-gray-700);
+    --card-bg-clr: var(--clr-gray-50);
+    --card-border-clr: var(--clr-gray-500);
+    --card-hover-clr: var(--clr-primary-700);
+    --card-hover-bg-clr: var(--clr-primary-100);
+    --card-hover-border-clr: var(--clr-primary-500);
+
+    --card-badge-clr: var(--clr-gray-50);
+    --card-badge-bg-clr: var(--clr-primary-500);
+    --card-badge-border-clr: var(--clr-primary-500);
+
+    --card-list-border-clr: var(--clr-gray-800);
+
+    @each $key, $value in $colors {
+      &-#{$key} {
+        --card-clr: var(--clr-#{$key}-700);
+        --card-bg-clr: var(--clr-gray-50);
+        --card-border-clr: var(--clr-#{$key}-500);
+        --card-hover-clr: var(--clr-#{$key}-700);
+        --card-hover-bg-clr: var(--clr-#{$key}-200);
+        --card-hover-border-clr: var(--clr-#{$key}-500);
+
+        --card-badge-clr: var(--clr-gray-50);
+        --card-badge-bg-clr: var(--clr-#{$key}-500);
+        --card-badge-border-clr: var(--clr-#{$key}-500);
+
+        --card-list-border-clr: var(--clr-#{$key}-500);
+      }
+    }
+  }
+}
