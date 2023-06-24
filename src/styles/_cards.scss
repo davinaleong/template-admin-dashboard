@@ -126,3 +126,17 @@
     }
   }
 }
+
+.card-grid {
+  --card-grid-gap: var(--size-v-400);
+
+  display: grid;
+  grid-template-columns: auto;
+  gap: var(--card-grid-gap);
+}
+
+@media screen and (min-width: #{breakpoint("md")}) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
