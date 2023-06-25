@@ -19,20 +19,66 @@
   <body class="landing">
     <header class="flow p-v-400">
       <div>
-        <h1 class="fz-xl fw-bold">
-          <a href="./index.html">Work Logger Template</a>
+        <h1 class="fz-900 fw-bold">
+          <small>Welcome to</small><br />
+          Work Logger
         </h1>
       </div>
     </header>
 
     <main class="flow p-v-400">
-      <h2 class="fz-700 fw-bold">Index</h2>
+      <h2 class="fz-700">Please login</h2>
 
-      <ul>
-        <li><a href="./styles.html">Styles</a></li>
-        <li><a href="./components.html">Components</a></li>
-        <li><a href="./landing.html">Landing</a></li>
-      </ul>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <div class="form-field-wrapper">
+            <input type="text" name="email" id="email" class="form-field" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <div class="form-field-wrapper">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form-field"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="checkbox-remember-me" class="form-label"
+            >Remember Me</label
+          >
+          <div class="form-field-wrapper">
+            <label
+              for="checkbox-remember-me"
+              class="form-radio-checkbox-wrapper form-radio-checkbox-wrapper-gray"
+            >
+              Yes
+              <input
+                type="checkbox"
+                name="checkbox-remember-me"
+                id="checkbox-remember-me"
+                class="form-field"
+                value="1"
+              />
+              <span class="form-checkbox"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="btn-group m-v-t-400">
+          <button class="btn btn-primary" type="submit">
+            Submit <i class="fa fa-check"></i>
+          </button>
+
+          <a href="#" class="btn btn-gray">
+            Forgot Password <i class="fa fa-question"></i>
+          </a>
+        </div>
+      </form>
     </main>
   </body>
 </html>

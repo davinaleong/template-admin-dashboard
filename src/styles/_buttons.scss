@@ -8,8 +8,9 @@
   --btn-hover-bg-clr: var(--clr-gray-500);
   --btn-hover-border: thin solid var(--clr-gray-500);
 
-  --btn-padding: var(--size-v-300);
-  --btn-gap: var(--size-v-300);
+  --btn-padding-x: var(--size-v-300);
+  --btn-padding-y: var(--size-v-100);
+  --btn-gap: var(--size-v-100);
   --btn-border-radius: 0;
 
   --btn-ff: var(--ff-primary);
@@ -31,16 +32,17 @@
   font-size: var(--btn-fz);
   font-weight: var(--btn-fw);
   text-transform: var(--btn-tt);
-  padding-top: var(--btn-padding);
-  padding-bottom: var(--btn-padding);
-  padding-left: var(--btn-padding);
-  padding-right: var(--btn-padding);
+  padding-top: var(--btn-padding-y);
+  padding-bottom: var(--btn-padding-y);
+  padding-left: var(--btn-padding-x);
+  padding-right: var(--btn-padding-x);
   border: var(--btn-border);
   border-radius: var(--btn-border-radius);
   opacity: var(--btn-opacity);
   text-decoration: var(--btn-td);
   cursor: pointer;
   min-width: var(--btn-width);
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     color: var(--btn-hover-clr);
@@ -184,6 +186,14 @@
       max-width: 20px;
     }
   }
+}
+
+.btn-group {
+  --btn-group-gap: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--btn-group-gap);
 }
 
 /// Buttons - Queries
