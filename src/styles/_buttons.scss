@@ -48,6 +48,7 @@
     color: var(--btn-hover-clr);
     background-color: var(--btn-hover-bg-clr);
     border: var(--btn-hover-border);
+    text-decoration: none;
   }
 
   &[disabled] {
