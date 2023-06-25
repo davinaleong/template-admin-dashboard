@@ -7,6 +7,17 @@ const ariaExpandedAttr = `aria-expanded`
 // Elements
 const fieldsetEls = document.querySelectorAll(`fieldset`)
 const menuEls = document.querySelectorAll(`.menu`)
+const landingHeadingEl = document.querySelector(`.landing__heading`)
+
+const landingBgs = [
+  "bg-landing-1",
+  "bg-landing-2",
+  "bg-landing-3",
+  "bg-landing-4",
+  "bg-landing-5",
+]
+
+const authBgs = ["bg-auth-1", "bg-auth-2", "bg-auth-3"]
 
 // Logic
 if (fieldsetEls && fieldsetEls.length > 0) {
@@ -41,6 +52,23 @@ if (menuEls && menuEls.length > 0) {
   })
 }
 
+if (landingHeadingEl) {
+  let oldBg = ``
+  const classList = landingHeadingEl.classList
+  console.log(`classList`, classList)
+  landingBgs.forEach(function (landingBg) {
+    classList.forEach(function (classItem) {
+      if (classItem === landingBg) {
+        oldBg = classItem
+      }
+    })
+  })
+
+  const newBg = getRandomArrayElement(landingBgs)
+  landingHeadingEl.classList.remove(oldBg)
+  landingHeadingEl.classList.add(newBg)
+}
+
 // Functions
 function toggleElement(element) {
   const ariaExpanded = element.getAttribute(ariaExpandedAttr)
@@ -48,4 +76,8 @@ function toggleElement(element) {
   if (ariaExpanded === `true`) {
     element.removeAttribute(ariaExpandedAttr)
   }
+}
+
+function getRandomArrayElement(array) {
+  return array[Math.floor(Math.random() * (array.length - 1))]
 }

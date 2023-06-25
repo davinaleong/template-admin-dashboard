@@ -1,1 +1,23 @@
 // Landing
+.landing {
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+  min-height: 100vh;
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--clr-gray-50);
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+
+    .main-content-wrapper {
+      width: 100%;
+    }
+  }
+}

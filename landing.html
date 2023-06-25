@@ -17,68 +17,68 @@
     <script defer type="module" src="./src/scripts/main.js"></script>
   </head>
   <body class="landing">
-    <header class="flow p-v-400">
-      <div>
-        <h1 class="fz-900 fw-bold">
-          <small>Welcome to</small><br />
-          Work Logger
-        </h1>
-      </div>
+    <header class="landing__heading bg-full bg-landing-1 flow p-v-400">
+      <h1 class="fz-900 clr-gray-50 ta-center">
+        <small>Welcome to</small><br />
+        <strong>Work Logger</strong>
+      </h1>
     </header>
 
-    <main class="flow p-v-400">
-      <h2 class="fz-700">Please login</h2>
+    <main class="landing__main bg-gray-50">
+      <div class="main-content-wrapper flow p-v-400">
+        <h2 class="fz-700">Please login</h2>
 
-      <form action="#" method="post">
-        <div class="form-group">
-          <label for="email" class="form-label">Email</label>
-          <div class="form-field-wrapper">
-            <input type="text" name="email" id="email" class="form-field" />
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <div class="form-field-wrapper">
+              <input type="text" name="email" id="email" class="form-field" />
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="password" class="form-label">Password</label>
-          <div class="form-field-wrapper">
-            <input
-              type="password"
-              name="password"
-              id="password"
-              class="form-field"
-            />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="checkbox-remember-me" class="form-label"
-            >Remember Me</label
-          >
-          <div class="form-field-wrapper">
-            <label
-              for="checkbox-remember-me"
-              class="form-radio-checkbox-wrapper form-radio-checkbox-wrapper-gray"
-            >
-              Yes
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <div class="form-field-wrapper">
               <input
-                type="checkbox"
-                name="checkbox-remember-me"
-                id="checkbox-remember-me"
+                type="password"
+                name="password"
+                id="password"
                 class="form-field"
-                value="1"
               />
-              <span class="form-checkbox"></span>
-            </label>
+            </div>
           </div>
-        </div>
+          <div class="form-group">
+            <label for="checkbox-remember-me" class="form-label"
+              >Remember Me</label
+            >
+            <div class="form-field-wrapper">
+              <label
+                for="checkbox-remember-me"
+                class="form-radio-checkbox-wrapper form-radio-checkbox-wrapper-gray"
+              >
+                Yes
+                <input
+                  type="checkbox"
+                  name="checkbox-remember-me"
+                  id="checkbox-remember-me"
+                  class="form-field"
+                  value="1"
+                />
+                <span class="form-checkbox"></span>
+              </label>
+            </div>
+          </div>
 
-        <div class="btn-group m-v-t-400">
-          <button class="btn btn-primary" type="submit">
-            Submit <i class="fa fa-check"></i>
-          </button>
+          <div class="btn-group m-v-t-400">
+            <button class="btn btn-primary" type="submit">
+              Submit <i class="fa fa-check"></i>
+            </button>
 
-          <a href="#" class="btn btn-gray">
-            Forgot Password <i class="fa fa-question"></i>
-          </a>
-        </div>
-      </form>
+            <a href="#" class="btn btn-gray">
+              Forgot Password <i class="fa fa-question"></i>
+            </a>
+          </div>
+        </form>
+      </div>
     </main>
   </body>
 </html>
