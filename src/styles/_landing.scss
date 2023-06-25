@@ -2,6 +2,7 @@
 .landing {
   display: grid;
   grid-template-rows: 2fr 3fr;
+  grid-template-columns: auto;
   min-height: 100vh;
 
   &__heading {
@@ -19,5 +20,12 @@
     .main-content-wrapper {
       width: 100%;
     }
+  }
+}
+
+@media screen and (min-width: #{breakpoint("xl")}) {
+  .landing {
+    grid-template-rows: auto;
+    grid-template-columns: 2fr 1fr;
   }
 }
