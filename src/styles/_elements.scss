@@ -24,6 +24,10 @@ code {
   font-family: font-family("secondary");
 }
 
+small {
+  font-size: 80%;
+}
+
 /// Links
 a {
   --a-clr: var(--clr-primary-500);
