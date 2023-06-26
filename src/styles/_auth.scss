@@ -1,0 +1,11 @@
+/// Auth
+.auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog {
+  width: min(100% - var(--size-v-400), 80ch);
+}

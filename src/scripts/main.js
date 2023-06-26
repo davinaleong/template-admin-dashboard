@@ -8,6 +8,7 @@ const ariaHiddenAttr = `aria-hidden`
 const fieldsetEls = document.querySelectorAll(`fieldset`)
 const menuEls = document.querySelectorAll(`.menu`)
 const landingHeadingEl = document.querySelector(`.landing__heading`)
+const authEl = document.querySelector(`.auth`)
 
 const landingBgs = [
   "bg-landing-1",
@@ -55,7 +56,6 @@ if (menuEls && menuEls.length > 0) {
 if (landingHeadingEl) {
   let oldBg = ``
   const classList = landingHeadingEl.classList
-  console.log(`classList`, classList)
   landingBgs.forEach(function (landingBg) {
     classList.forEach(function (classItem) {
       if (classItem === landingBg) {
@@ -69,6 +69,22 @@ if (landingHeadingEl) {
   landingHeadingEl.classList.add(newBg)
 }
 
+if (authEl) {
+  let oldBg = ``
+  const classList = authEl.classList
+  authBgs.forEach(function (authBg) {
+    classList.forEach(function (classItem) {
+      if (classItem === authBg) {
+        oldBg = classItem
+      }
+    })
+  })
+
+  const newBg = getRandomArrayElement(authBgs)
+  authEl.classList.remove(oldBg)
+  authEl.classList.add(newBg)
+}
+
 // Functions
 function toggleElement(element) {
   const ariaHidden = element.getAttribute(ariaHiddenAttr)
@@ -79,5 +95,5 @@ function toggleElement(element) {
 }
 
 function getRandomArrayElement(array) {
-  return array[Math.floor(Math.random() * (array.length - 1))]
+  return array[Math.floor(Math.random() * array.length)]
 }
