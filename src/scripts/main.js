@@ -2,7 +2,7 @@ console.log(`main.js loaded`)
 
 // Attributes
 const dataElementAttr = `data-element`
-const ariaExpandedAttr = `aria-expanded`
+const ariaHiddenAttr = `aria-hidden`
 
 // Elements
 const fieldsetEls = document.querySelectorAll(`fieldset`)
@@ -23,7 +23,7 @@ const authBgs = ["bg-auth-1", "bg-auth-2", "bg-auth-3"]
 if (fieldsetEls && fieldsetEls.length > 0) {
   fieldsetEls.forEach(function (fieldsetEl) {
     // On load, expand all fieldsets
-    fieldsetEl.setAttribute(ariaExpandedAttr, `true`)
+    fieldsetEl.setAttribute(ariaHiddenAttr, `true`)
 
     const legendEl = fieldsetEl.querySelector(`legend`)
     legendEl.addEventListener(`click`, function (event) {
@@ -38,9 +38,9 @@ if (menuEls && menuEls.length > 0) {
     const menuItemEls = menuEl.querySelectorAll(`.menu-item`)
     menuItemEls.forEach(function (menuItemEl, index) {
       // On load, expand the first menu item and collapse the rest
-      menuItemEl.setAttribute(ariaExpandedAttr, `true`)
+      menuItemEl.setAttribute(ariaHiddenAttr, `true`)
       if (index > 0) {
-        menuItemEl.removeAttribute(ariaExpandedAttr)
+        menuItemEl.removeAttribute(ariaHiddenAttr)
       }
 
       const menuItemLabelEl = menuItemEl.querySelector(`.menu-item-label`)
@@ -71,10 +71,10 @@ if (landingHeadingEl) {
 
 // Functions
 function toggleElement(element) {
-  const ariaExpanded = element.getAttribute(ariaExpandedAttr)
-  element.setAttribute(ariaExpandedAttr, `true`)
-  if (ariaExpanded === `true`) {
-    element.removeAttribute(ariaExpandedAttr)
+  const ariaHidden = element.getAttribute(ariaHiddenAttr)
+  element.setAttribute(ariaHiddenAttr, `true`)
+  if (ariaHidden === `true`) {
+    element.removeAttribute(ariaHiddenAttr)
   }
 }
 

@@ -18,8 +18,8 @@ fieldset {
   .content {
     display: none;
   }
-  
-  &[aria-expanded="true"] {
+
+  &[aria-hidden="true"] {
     legend::before {
       transform: translate(-50%, -50%) rotate(135deg);
     }
@@ -116,7 +116,8 @@ textarea.form-field {
   --form-radio-checkbox-wrapper-clr: var(--clr-gray-800);
   --form-radio-checkbox-wrapper-bg-clr: var(--clr-gray-50);
   --form-radio-checkbox-wrapper-border-clr: var(--clr-gray-800);
-  --form-radio-checkbox-wrapper-border: thin solid var(--form-radio-checkbox-wrapper-border-clr);
+  --form-radio-checkbox-wrapper-border: thin solid
+    var(--form-radio-checkbox-wrapper-border-clr);
 
   --form-radio-checkbox-wrapper-radio-indicator-size: 0.2em;
   --form-radio-checkbox-wrapper-check-indicator-width: var(--size-v-300);
@@ -135,7 +136,9 @@ textarea.form-field {
       --form-radio-checkbox-wrapper-bg-clr: var(--clr-#{$key}-50);
       --form-radio-checkbox-wrapper-border-clr: var(--clr-#{$key}-500);
       --form-radio-checkbox-wrapper-indicator-clr: var(--clr-#{$key}-50);
-      --form-radio-checkbox-wrapper-indicator-checked-clr: var(--clr-#{$key}-500);
+      --form-radio-checkbox-wrapper-indicator-checked-clr: var(
+        --clr-#{$key}-500
+      );
     }
   }
 }
@@ -202,9 +205,13 @@ input.form-field[type="radio"] ~ .form-radio {
   --form-radio-bg-clr: var(--form-radio-checkbox-wrapper-bg-clr);
   --form-radio-border: var(--form-radio-checkbox-wrapper-border);
 
-  --form-radio-indicator-size: var(--form-radio-checkbox-wrapper-radio-indicator-size);
+  --form-radio-indicator-size: var(
+    --form-radio-checkbox-wrapper-radio-indicator-size
+  );
   --form-radio-indicator-clr: var(--form-radio-checkbox-wrapper-indicator-clr);
-  --form-radio-indicator-checked-clr: var(--form-radio-checkbox-wrapper-indicator-checked-clr);
+  --form-radio-indicator-checked-clr: var(
+    --form-radio-checkbox-wrapper-indicator-checked-clr
+  );
 
   display: block;
   width: var(--form-radio-size);
@@ -234,10 +241,18 @@ input.form-field[type="checkbox"] ~ .form-checkbox {
   --form-checkbox-bg-clr: var(--form-radio-checkbox-wrapper-bg-clr);
   --form-checkbox-border: var(--form-radio-checkbox-wrapper-border);
 
-  --form-checkbox-indicator-width: var(--form-radio-checkbox-wrapper-check-indicator-width);
-  --form-checkbox-indicator-height: var(--form-radio-checkbox-wrapper-check-indicator-height);
-  --form-checkbox-indicator-clr: var(--form-radio-checkbox-wrapper-indicator-clr);
-  --form-checkbox-indicator-checked-clr: var(--form-radio-checkbox-wrapper-indicator-checked-clr);
+  --form-checkbox-indicator-width: var(
+    --form-radio-checkbox-wrapper-check-indicator-width
+  );
+  --form-checkbox-indicator-height: var(
+    --form-radio-checkbox-wrapper-check-indicator-height
+  );
+  --form-checkbox-indicator-clr: var(
+    --form-radio-checkbox-wrapper-indicator-clr
+  );
+  --form-checkbox-indicator-checked-clr: var(
+    --form-radio-checkbox-wrapper-indicator-checked-clr
+  );
 
   display: block;
   width: var(--form-checkbox-size);

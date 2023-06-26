@@ -52,7 +52,7 @@
     border-left: var(--menu-border);
   }
 
-  & .menu-item[aria-expanded="true"] {
+  & .menu-item[aria-hidden="true"] {
     .menu-item-label::after {
       transform: translate(-50%, -50%) rotate(135deg);
     }
