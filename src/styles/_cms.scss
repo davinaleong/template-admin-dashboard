@@ -1,0 +1,12 @@
+/// CMS
+.cms {
+  display: grid;
+  grid-template-columns: 2.5fr 7.5fr;
+  min-height: 100vh;
+}
+
+.aside__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

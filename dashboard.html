@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Work Logger Template</title>
+
+    <link rel="icon" type="image/svg+xml" href="./src/assets/images/logo.svg" />
+    <link rel="stylesheet" href="./src/styles/main.scss" />
+
+    <script
+      defer
+      src="https://kit.fontawesome.com/6c0a4e7a8f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="./src/scripts/main.js"></script>
+  </head>
+  <body class="cms text-gray-800 bg-gray-50">
+    <button
+      class="btn btn-secondary btn-absolute btn-top btn-right shadow-v-br-400"
+      aria-label="Menu"
+      style="
+        --btn-padding-x: var(--size-v-200);
+        --btn-padding-y: var(--size-v-100);
+        --btn-width: auto;
+      "
+      data-element="btn-menu"
+    >
+      <i class="fa fa-bars"></i>
+    </button>
+    <aside class="p-v-400 bg-secondary-200" aria-hidden="false">
+      <div class="aside__top m-v-b-600">
+        <div class="aside__top__left">
+          <a href="#" class="brand" aria-label="Work Logger">
+            <img
+              src="./src/assets/images/logo.svg"
+              alt="logo"
+              width="80"
+              height="80"
+            />
+          </a>
+        </div>
+        <div class="aside__top__right">
+          <button class="btn btn-primary">
+            Logout <i class="fa fa-sign-out"></i>
+          </button>
+
+          <button
+            class="btn btn-link btn-link-danger"
+            style="--btn-fz: var(--fz-500)"
+            aria-label="Close"
+            data-element="btn-close-menu"
+          >
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <ul class="menu flow" role="list">
+        <li class="menu-item" data-active="true" aria-hidden="true">
+          <a href="#" class="menu-item-label">Menu Item</a>
+
+          <ul class="sub-menu flow" role="list">
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="#">Sub-menu Item</a>
+            </li>
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="#">Sub-menu Item</a>
+            </li>
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="#">Sub-menu Item</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-item flow" aria-hidden="false">
+          <a href="#" class="menu-item-label">Menu Item</a>
+
+          <ul class="sub-menu flow" role="list">
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="#">Sub-menu Item</a>
+            </li>
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="#">Sub-menu Item</a>
+            </li>
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="#">Sub-menu Item</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-item flow" aria-hidden="false">
+          <a href="#" class="menu-item-label">Menu Item</a>
+
+          <ul class="sub-menu flow" role="list">
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="#">Sub-menu Item</a>
+            </li>
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="#">Sub-menu Item</a>
+            </li>
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="#">Sub-menu Item</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <main class="p-v-400">Main</main>
+  </body>
+</html>

@@ -14,7 +14,7 @@
   --btn-border-radius: 0;
 
   --btn-ff: var(--ff-primary);
-  --btn-fz: var(--fz-md);
+  --btn-fz: var(--fz-400);
   --btn-fw: var(--fw-normal);
   --btn-tt: normal;
   --btn-offset: var(--size-v-400);
@@ -108,7 +108,8 @@
     --btn-hover-bg-clr: transparent;
     --btn-hover-border: none;
 
-    --btn-padding: var(--size-v-0);
+    --btn-padding-x: 0;
+    --btn-padding-y: 0;
 
     --btn-tt: normal;
     --btn-fw: normal;
@@ -124,7 +125,8 @@
         --btn-hover-bg-clr: transparent;
         --btn-hover-border: none;
 
-        --btn-padding: var(--size-v-0);
+        --btn-padding-x: 0;
+        --btn-padding-y: 0;
 
         --btn-tt: normal;
         --btn-fw: normal;
