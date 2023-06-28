@@ -49,6 +49,15 @@ a {
       --a-hover-clr: var(--clr-#{$key}-700);
     }
   }
+
+  &[data-active="true"] {
+    --a-clr: var(--clr-gray-800);
+    --a-td: none;
+    --a-hover-clr: var(--clr-gray-800);
+    --a-hover-td: none;
+
+    cursor: default;
+  }
 }
 
 /// Lists

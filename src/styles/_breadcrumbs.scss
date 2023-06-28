@@ -1,0 +1,15 @@
+/// Breadcrumbs
+.breadcrumbs {
+  --breadcrumbs-spacer: var(--size-v-200);
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--breadcrumbs-spacer);
+  padding-left: 0;
+  list-style: none;
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: "/\00a0";
+  }
+}
