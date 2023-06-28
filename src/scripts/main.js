@@ -9,6 +9,11 @@ const fieldsetEls = document.querySelectorAll(`fieldset`)
 const menuEls = document.querySelectorAll(`.menu`)
 const landingHeadingEl = document.querySelector(`.landing__heading`)
 const authEl = document.querySelector(`.auth`)
+const sidebarEl = document.querySelector(`[${dataElementAttr}="sidebar"]`)
+const btnMenuEl = document.querySelector(`[${dataElementAttr}="btn-menu"]`)
+const btnCloseMenuEl = document.querySelector(
+  `[${dataElementAttr}="btn-close-menu"]`
+)
 
 const landingBgs = [
   "bg-landing-1",
@@ -83,6 +88,22 @@ if (authEl) {
   const newBg = getRandomArrayElement(authBgs)
   authEl.classList.remove(oldBg)
   authEl.classList.add(newBg)
+}
+
+if (sidebarEl) {
+  if (btnMenuEl) {
+    btnMenuEl.addEventListener(`click`, function (event) {
+      event.preventDefault()
+
+      sidebarEl.setAttribute(ariaHiddenAttr, `true`)
+    })
+
+    btnCloseMenuEl.addEventListener(`click`, function (event) {
+      event.preventDefault()
+
+      sidebarEl.setAttribute(ariaHiddenAttr, `false`)
+    })
+  }
 }
 
 // Functions
