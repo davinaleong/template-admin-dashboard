@@ -30,103 +30,6 @@ const landingBgs = [
 
 const authBgs = ["bg-auth-1", "bg-auth-2", "bg-auth-3"]
 
-// Logic
-if (fieldsetEls && fieldsetEls.length > 0) {
-  fieldsetEls.forEach(function (fieldsetEl) {
-    // On load, expand all fieldsets
-    fieldsetEl.setAttribute(ariaHiddenAttr, `true`)
-
-    const legendEl = fieldsetEl.querySelector(`legend`)
-    legendEl.addEventListener(`click`, function (event) {
-      event.preventDefault()
-      toggleElement(fieldsetEl)
-    })
-  })
-}
-
-if (menuEls && menuEls.length > 0) {
-  menuEls.forEach(function (menuEl) {
-    const menuItemEls = menuEl.querySelectorAll(`.menu-item`)
-    menuItemEls.forEach(function (menuItemEl, index) {
-      // On load, expand the first menu item and collapse the rest
-      menuItemEl.setAttribute(ariaHiddenAttr, `true`)
-      if (index > 0) {
-        menuItemEl.removeAttribute(ariaHiddenAttr)
-      }
-
-      const menuItemLabelEl = menuItemEl.querySelector(`.menu-item-label`)
-      menuItemLabelEl.addEventListener(`click`, function (event) {
-        event.preventDefault()
-        toggleElement(menuItemEl)
-      })
-    })
-  })
-}
-
-if (landingHeadingEl) {
-  let oldBg = ``
-  const classList = landingHeadingEl.classList
-  landingBgs.forEach(function (landingBg) {
-    classList.forEach(function (classItem) {
-      if (classItem === landingBg) {
-        oldBg = classItem
-      }
-    })
-  })
-
-  const newBg = getRandomArrayElement(landingBgs)
-  landingHeadingEl.classList.remove(oldBg)
-  landingHeadingEl.classList.add(newBg)
-}
-
-if (authEl) {
-  let oldBg = ``
-  const classList = authEl.classList
-  authBgs.forEach(function (authBg) {
-    classList.forEach(function (classItem) {
-      if (classItem === authBg) {
-        oldBg = classItem
-      }
-    })
-  })
-
-  const newBg = getRandomArrayElement(authBgs)
-  authEl.classList.remove(oldBg)
-  authEl.classList.add(newBg)
-}
-
-if (sidebarEl) {
-  if (btnMenuEl) {
-    btnMenuEl.addEventListener(`click`, function (event) {
-      event.preventDefault()
-
-      sidebarEl.setAttribute(ariaHiddenAttr, `true`)
-    })
-
-    btnCloseMenuEl.addEventListener(`click`, function (event) {
-      event.preventDefault()
-
-      sidebarEl.setAttribute(ariaHiddenAttr, `false`)
-    })
-  }
-}
-
-if (btnBackToTopEl) {
-  window.addEventListener(`scroll`, function (event) {
-    const ariaHidden = window.scrollY >= 100 ? `false` : `true`
-    btnBackToTopEl.setAttribute(ariaHiddenAttr, ariaHidden)
-  })
-}
-
-if (aActiveEls && aActiveEls.length > 0) {
-  aActiveEls.forEach(function (aActiveEl) {
-    aActiveEl.addEventListener(`click`, function (event) {
-      event.preventDefault()
-      return
-    })
-  })
-}
-
 // Functions
 function toggleElement(element) {
   const ariaHidden = element.getAttribute(ariaHiddenAttr)
@@ -139,3 +42,132 @@ function toggleElement(element) {
 function getRandomArrayElement(array) {
   return array[Math.floor(Math.random() * array.length)]
 }
+
+function main() {
+  try {
+    // Collapsible Fieldsets
+    fieldsetEls.forEach(function (fieldsetEl) {
+      // On load, expand all fieldsets
+      fieldsetEl.setAttribute(ariaHiddenAttr, `true`)
+
+      const legendEl = fieldsetEl.querySelector(`legend`)
+      legendEl.addEventListener(`click`, function (event) {
+        event.preventDefault()
+        toggleElement(fieldsetEl)
+      })
+    })
+
+    // Menu Accordion
+    menuEls.forEach(function (menuEl) {
+      const menuItemEls = menuEl.querySelectorAll(`.menu-item`)
+      menuItemEls.forEach(function (menuItemEl, index) {
+        // On load, expand the first menu item and collapse the rest
+        menuItemEl.setAttribute(ariaHiddenAttr, `true`)
+        if (index > 0) {
+          menuItemEl.removeAttribute(ariaHiddenAttr)
+        }
+
+        const menuItemLabelEl = menuItemEl.querySelector(`.menu-item-label`)
+        menuItemLabelEl.addEventListener(`click`, function (event) {
+          event.preventDefault()
+          toggleElement(menuItemEl)
+        })
+      })
+    })
+
+    // Random Landing Page BG
+    let oldLandingBg = ``
+    const landingClassList = landingHeadingEl.classList
+    landingBgs.forEach(function (landingBg) {
+      landingClassList.forEach(function (classItem) {
+        if (classItem === landingBg) {
+          oldLandingBg = classItem
+        }
+      })
+    })
+
+    const newLandingBg = getRandomArrayElement(landingBgs)
+    landingHeadingEl.classList.remove(oldLandingBg)
+    landingHeadingEl.classList.add(newLandingBg)
+
+    // Random Auth Page BG
+    let oldAuthBg = ``
+    const authClassList = authEl.classList
+    authBgs.forEach(function (authBg) {
+      authClassList.forEach(function (classItem) {
+        if (classItem === authBg) {
+          oldAuthBg = classItem
+        }
+      })
+    })
+
+    const newAuthBg = getRandomArrayElement(authBgs)
+    authEl.classList.remove(oldAuthBg)
+    authEl.classList.add(newAuthBg)
+
+    btnMenuEl.addEventListener(`click`, function (event) {
+      event.preventDefault()
+
+      sidebarEl.setAttribute(ariaHiddenAttr, `true`)
+    })
+
+    btnCloseMenuEl.addEventListener(`click`, function (event) {
+      event.preventDefault()
+
+      sidebarEl.setAttribute(ariaHiddenAttr, `false`)
+    })
+
+    aActiveEls.forEach(function (aActiveEl) {
+      aActiveEl.addEventListener(`click`, function (event) {
+        event.preventDefault()
+        return
+      })
+    })
+  } catch (error) {
+    console.log(`menuEls`, error)
+  }
+}
+
+/**
+ * Credit to: Adrian Roselli
+ * https://adrianroselli.com/2018/05/functions-to-add-aria-to-tables-and-lists.html
+ */
+function addTableARIA() {
+  try {
+    let allTables = document.querySelectorAll("table")
+    for (let i = 0; i < allTables.length; i++) {
+      allTables[i].setAttribute("role", "table")
+    }
+    let allCaptions = document.querySelectorAll("caption")
+    for (let i = 0; i < allCaptions.length; i++) {
+      allCaptions[i].setAttribute("role", "caption")
+    }
+    let allRowGroups = document.querySelectorAll("thead, tbody, tfoot")
+    for (let i = 0; i < allRowGroups.length; i++) {
+      allRowGroups[i].setAttribute("role", "rowgroup")
+    }
+    let allRows = document.querySelectorAll("tr")
+    for (let i = 0; i < allRows.length; i++) {
+      allRows[i].setAttribute("role", "row")
+    }
+    let allCells = document.querySelectorAll("td")
+    for (let i = 0; i < allCells.length; i++) {
+      allCells[i].setAttribute("role", "cell")
+    }
+    let allHeaders = document.querySelectorAll("th")
+    for (let i = 0; i < allHeaders.length; i++) {
+      allHeaders[i].setAttribute("role", "columnheader")
+    }
+    // this accounts for scoped row headers
+    let allRowHeaders = document.querySelectorAll("th[scope=row]")
+    for (let i = 0; i < allRowHeaders.length; i++) {
+      allRowHeaders[i].setAttribute("role", "rowheader")
+    }
+  } catch (e) {
+    console.log("addTableARIA(): " + e)
+  }
+}
+
+// Call Functions
+main()
+addTableARIA()
