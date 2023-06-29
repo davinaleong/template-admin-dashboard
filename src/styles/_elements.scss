@@ -60,6 +60,35 @@ a {
   }
 }
 
+/// Sections
+section,
+.section {
+  --section-clr: var(--clr-gray-700);
+  --section-heading-clr: var(--clr-primary-400);
+
+  --section-header-border-clr: var(--clr-gray-500);
+  --section-header-border: thin solid var(--section-header-border-clr);
+
+  color: var(--section-clr);
+
+  &__header {
+    border-bottom: var(--section-header-border);
+
+    &__heading {
+      color: var(--section-heading-clr);
+    }
+  }
+
+  @each $key, $value in $colors {
+    &-#{$key} {
+      --section-clr: var(--clr-#{$key}-700);
+      --section-heading-clr: var(--clr-#{$key}-400);
+
+      --section-header-border-clr: var(--clr-#{$key}-500);
+    }
+  }
+}
+
 /// Lists
 ul,
 ol {
