@@ -105,24 +105,26 @@ body,
 }
 
 .wrapper {
-  --wrapper-padding-inline: var(--size-v-400);
-  --wrapper-width: #{breakpoint("xxl")};
-
-  margin-inline: auto;
-  width: min(100% - var(--wrapper-padding-inline), var(--wrapper-width));
-  position: relative;
-}
-
-.wrapper-no-margin {
-  --wrapper-padding-inline: var(--size-v-400);
+  --wrapper-padding: var(--size-v-400);
   --wrapper-width: #{breakpoint("xxl")};
 
   width: min(100% - var(--wrapper-padding-inline), var(--wrapper-width));
   position: relative;
-}
 
-.wrapper-no-padding {
-  --wrapper-padding-inline: var(--size-v-0);
+  &-aligned-center {
+    margin-inline: auto;
+  }
+
+  &-with-padding {
+    padding-top: var(--wrapper-padding);
+    padding-right: var(--wrapper-padding);
+    padding-bottom: var(--wrapper-padding);
+    padding-left: var(--wrapper-padding);
+  }
+
+  &-no-gutter {
+    --wrapper-padding-inline: var(--size-v-0);
+  }
 }
 
 .container {
