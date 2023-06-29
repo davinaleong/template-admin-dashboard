@@ -108,8 +108,15 @@ body,
   --wrapper-padding-inline: var(--size-v-400);
   --wrapper-width: #{breakpoint("xxl")};
 
-  // padding-inline: var(--wrapper-padding-inline);
   margin-inline: auto;
+  width: min(100% - var(--wrapper-padding-inline), var(--wrapper-width));
+  position: relative;
+}
+
+.wrapper-no-margin {
+  --wrapper-padding-inline: var(--size-v-400);
+  --wrapper-width: #{breakpoint("xxl")};
+
   width: min(100% - var(--wrapper-padding-inline), var(--wrapper-width));
   position: relative;
 }
