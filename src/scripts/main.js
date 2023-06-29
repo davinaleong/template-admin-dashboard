@@ -14,6 +14,9 @@ const btnMenuEl = document.querySelector(`[${dataElementAttr}="btn-menu"]`)
 const btnCloseMenuEl = document.querySelector(
   `[${dataElementAttr}="btn-close-menu"]`
 )
+const btnBackToTopEl = document.querySelector(
+  `[${dataElementAttr}="btn-back-to-top"]`
+)
 
 const landingBgs = [
   "bg-landing-1",
@@ -104,6 +107,13 @@ if (sidebarEl) {
       sidebarEl.setAttribute(ariaHiddenAttr, `false`)
     })
   }
+}
+
+if (btnBackToTopEl) {
+  window.addEventListener(`scroll`, function (event) {
+    const ariaHidden = window.scrollY >= 100 ? `false` : `true`
+    btnBackToTopEl.setAttribute(ariaHiddenAttr, ariaHidden)
+  })
 }
 
 // Functions

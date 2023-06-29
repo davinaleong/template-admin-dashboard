@@ -2,7 +2,7 @@
 .cms {
   display: grid;
   grid-template-columns: 2fr 8fr;
-  min-height: 100vh;
+  min-height: 200vh;
 }
 
 .aside__top {
@@ -24,6 +24,15 @@
 
 [data-element="btn-close-menu"] {
   display: none;
+}
+
+[data-element="btn-back-to-top"] {
+  transform: translate(0, 200%);
+  transition: transform 0.5s ease-in-out;
+}
+
+[data-element="btn-back-to-top"][aria-hidden="false"] {
+  transform: translate(0, 0);
 }
 
 @media screen and (max-width: #{breakpoint("sm")}) {

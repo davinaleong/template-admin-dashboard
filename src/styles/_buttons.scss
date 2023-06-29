@@ -161,13 +161,13 @@
 
   &-fixed {
     position: fixed;
-    z-index: 3;
+    z-index: 1;
     isolation: isolate;
   }
 
   &-absolute {
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     isolation: isolate;
   }
 
