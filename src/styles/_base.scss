@@ -43,6 +43,8 @@
   }
 
   --container-width: 1200px;
+  --main-footer-height: 2.75em;
+  --section-header-height: 6.938em;
 }
 
 /// Base - HTML & Body
@@ -129,4 +131,27 @@ body,
 
 img {
   cursor: pointer;
+}
+
+.main-content-wrapper {
+  & > *:first-child {
+    min-height: calc(100% - var(--main-footer-height));
+  }
+}
+
+.layout-grid {
+  --layout-grid-gap: var(--size-v-400);
+
+  display: block;
+}
+
+@media screen and (min-width: #{breakpoint('lg')}) {
+  .layout-grid {
+    display: grid;
+    gap: var(--layout-grid-gap);
+
+    &-dashboard {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
 }

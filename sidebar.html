@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Work Logger Template</title>
+
+    <link rel="icon" type="image/svg+xml" href="./src/assets/images/logo.svg" />
+    <link rel="stylesheet" href="./src/styles/main.scss" />
+
+    <script
+      defer
+      src="https://kit.fontawesome.com/6c0a4e7a8f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="./src/scripts/main.js"></script>
+  </head>
+  <body class="template">
+    <div class="wrapper">
+      <header class="template-primary-header p-f-y-200">
+        <div>
+          <h1 class="fz-500 fw-bold">
+            <a href="./index.html">Work Logger Template</a>
+          </h1>
+        </div>
+      </header>
+
+      <main class="flow p-f-y-400 container">
+        <h2 class="fz-700 fw-bold">Sidebar</h2>
+
+        <aside
+          class="p-v-400 bg-secondary-200"
+          aria-hidden="false"
+          data-element="sidebar"
+        >
+          <div class="aside__top m-v-b-600">
+            <div class="aside__top__left">
+              <a href="#" class="brand" aria-label="Work Logger">
+                <img
+                  src="./src/assets/images/logo.svg"
+                  alt="logo"
+                  width="80"
+                  height="80"
+                />
+              </a>
+            </div>
+            <div class="aside__top__right">
+              <button class="btn btn-primary">
+                Logout <i class="fa fa-sign-out"></i>
+              </button>
+
+              <button
+                class="btn btn-link btn-link-danger"
+                style="--btn-fz: var(--fz-500)"
+                data-element="btn-close-menu"
+                aria-label="Close"
+              >
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+          </div>
+
+          <ul class="menu flow" role="list">
+            <li class="menu-item" data-active="true" aria-hidden="true">
+              <a href="./dashboard.html">Dashboard</a>
+            </li>
+          </ul>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>

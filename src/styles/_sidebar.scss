@@ -16,32 +16,53 @@
   --menu-border: thin solid var(--clr-primary-800);
   --menu-padding: var(--size-v-200);
   --menu-margin: var(--size-v-200);
-  --menu-arrow-size: var(--fz-200);
+
+  --menu-item-link-gap: var(--size-v-200);
+
+  --menu-item-label-arrow-size: var(--fz-200);
 
   color: var(--menu-clr);
   padding-left: 0;
 
-  .menu-item-label {
-    display: block;
-    position: relative;
-    margin-bottom: var(--menu-margin);
-
-    &::hover {
-      color: var(--menu-hover-clr);
+  &-item {
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: var(--menu-item-link-gap);
     }
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 0;
-      width: var(--menu-arrow-size);
-      height: var(--menu-arrow-size);
-      border-left: 0.1em solid var(--menu-clr);
-      border-bottom: 0.1em solid var(--menu-clr);
-      transform: translate(-50%, -50%) rotate(-45deg);
-      transform-origin: center;
-      transition: transform 0.3s ease-in-out;
+    &__label {
+      display: block;
+      position: relative;
+      margin-bottom: var(--menu-margin);
+
+      &::hover {
+        color: var(--menu-hover-clr);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: var(--menu-item-label-arrow-size);
+        height: var(--menu-item-label-arrow-size);
+        border-left: 0.1em solid var(--menu-clr);
+        border-bottom: 0.1em solid var(--menu-clr);
+        transform: translate(-50%, -50%) rotate(-45deg);
+        transform-origin: center;
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    &[aria-hidden="true"] {
+      .menu-item__label::after {
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+
+      .sub-menu {
+        display: block;
+      }
     }
   }
 
@@ -50,15 +71,5 @@
     padding-left: var(--menu-padding);
     margin-left: var(--menu-margin);
     border-left: var(--menu-border);
-  }
-
-  & .menu-item[aria-hidden="true"] {
-    .menu-item-label::after {
-      transform: translate(-50%, -50%) rotate(135deg);
-    }
-
-    .sub-menu {
-      display: block;
-    }
   }
 }

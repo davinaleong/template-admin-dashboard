@@ -74,6 +74,10 @@ section,
   &__header {
     border-bottom: var(--section-header-border);
 
+    &-activity {
+      min-height: var(--section-header-height);
+    }
+
     &__heading {
       color: var(--section-heading-clr);
     }
