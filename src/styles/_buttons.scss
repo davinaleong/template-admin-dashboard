@@ -176,9 +176,22 @@
   }
 
   &-icon {
+    --btn-padding-x: var(--size-v-100);
+    --btn-padding-y: var(--size-v-100);
+
+    min-height: var(--btn-width);
+
     &__label {
       display: none;
     }
+  }
+
+  &-rounded {
+    --btn-border-radius: 50%;
+  }
+
+  &-pill {
+    --btn-border-radius: 100vmax;
   }
 
   &-truncate {

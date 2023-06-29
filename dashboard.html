@@ -16,7 +16,7 @@
     ></script>
     <script defer type="module" src="./src/scripts/main.js"></script>
   </head>
-  <body class="cms text-gray-800 bg-gray-50">
+  <body id="top" class="cms text-gray-800 bg-gray-50">
     <button
       class="btn btn-secondary btn-absolute btn-top btn-right shadow-v-br-400"
       aria-label="Menu"
@@ -29,6 +29,18 @@
     >
       <i class="fa fa-bars"></i>
     </button>
+    <a
+      href="#top"
+      class="btn btn-gray btn-absolute btn-bottom btn-right btn-icon btn-rounded shadow-v-br-400"
+      aria-label="Back to Top"
+      style="
+        --btn-padding-x: var(--size-v-200);
+        --btn-padding-y: var(--size-v-200);
+        --btn-width: auto;
+      "
+    >
+      <i class="fa fa-chevron-up"></i>
+    </a>
     <aside
       class="p-v-400 bg-secondary-200"
       aria-hidden="false"
