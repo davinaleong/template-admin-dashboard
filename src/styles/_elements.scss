@@ -117,6 +117,8 @@ table,
   --table-caption-tt: uppercase;
   --table-caption-ls: 0.05rem;
   --table-caption-padding: var(--table-padding);
+  --table-caption-arrow-size: var(--fz-200);
+  --table-caption-arrow-clr: var(--clr-gray-800);
 
   --table-thead-border: var(--table-section-border);
   --table-thead-th-clr: var(--clr-gray-50);
@@ -252,6 +254,41 @@ table,
       --table-border-clr: var(--clr-#{$key}-300);
 
       --table-thead-th-bg-clr: var(--clr-#{$key}-500);
+    }
+  }
+
+  &-collapsible {
+    caption {
+      cursor: pointer;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: var(--table-caption-padding);
+        width: var(--table-caption-arrow-size);
+        height: var(--table-caption-arrow-size);
+        border-left: 0.1em solid var(--table-caption-arrow-clr);
+        border-bottom: 0.1em solid var(--table-caption-arrow-clr);
+        transform: translate(-50%, -50%) rotate(-45deg);
+        transform-origin: center;
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    tbody {
+      display: none;
+    }
+
+    &[aria-expanded="true"] {
+      caption::after {
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+
+      tbody {
+        display: table-row-group;
+      }
     }
   }
 }

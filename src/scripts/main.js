@@ -4,21 +4,7 @@ console.log(`main.js loaded`)
 const dataElementAttr = `data-element`
 const dataActiveAttr = `data-active`
 const ariaHiddenAttr = `aria-hidden`
-
-// Elements
-const fieldsetEls = document.querySelectorAll(`fieldset`)
-const menuEls = document.querySelectorAll(`.menu`)
-const landingHeadingEl = document.querySelector(`.landing__heading`)
-const authEl = document.querySelector(`.auth`)
-const sidebarEl = document.querySelector(`[${dataElementAttr}="sidebar"]`)
-const btnMenuEl = document.querySelector(`[${dataElementAttr}="btn-menu"]`)
-const btnCloseMenuEl = document.querySelector(
-  `[${dataElementAttr}="btn-close-menu"]`
-)
-const btnBackToTopEl = document.querySelector(
-  `[${dataElementAttr}="btn-back-to-top"]`
-)
-const aActiveEls = document.querySelectorAll(`a[${dataActiveAttr}="true"]`)
+const ariaExpandedAttr = `aria-expanded`
 
 const landingBgs = [
   "bg-landing-1",
@@ -31,7 +17,13 @@ const landingBgs = [
 const authBgs = ["bg-auth-1", "bg-auth-2", "bg-auth-3"]
 
 // Functions
+function logFunction(name, params = {}) {
+  console.log(`fn ${name}(${JSON.stringify(params)})`)
+}
+
 function toggleElement(element) {
+  logFunction(`toggleElement`, { element })
+
   const ariaHidden = element.getAttribute(ariaHiddenAttr)
   element.setAttribute(ariaHiddenAttr, `true`)
   if (ariaHidden === `true`) {
@@ -40,12 +32,32 @@ function toggleElement(element) {
 }
 
 function getRandomArrayElement(array) {
+  logFunction(`getRandomArrayElement`, { array })
+
   return array[Math.floor(Math.random() * array.length)]
 }
 
 function main() {
-  try {
-    // Collapsible Fieldsets
+  logFunction(`main`)
+
+  // Elements
+  const fieldsetEls = document.querySelectorAll(`fieldset`)
+  const menuEls = document.querySelectorAll(`.menu`)
+  const landingHeadingEl = document.querySelector(`.landing__heading`)
+  const authEl = document.querySelector(`.auth`)
+  const sidebarEl = document.querySelector(`[${dataElementAttr}="sidebar"]`)
+  const btnMenuEl = document.querySelector(`[${dataElementAttr}="btn-menu"]`)
+  const btnCloseMenuEl = document.querySelector(
+    `[${dataElementAttr}="btn-close-menu"]`
+  )
+  const btnBackToTopEl = document.querySelector(
+    `[${dataElementAttr}="btn-back-to-top"]`
+  )
+  const aActiveEls = document.querySelectorAll(`a[${dataActiveAttr}="true"]`)
+  const tableCollapsibleEls = document.querySelectorAll(`.table-collapsible`)
+
+  // Collapsible Fieldsets
+  if (fieldsetEls && fieldsetEls.length > 0) {
     fieldsetEls.forEach(function (fieldsetEl) {
       // On load, expand all fieldsets
       fieldsetEl.setAttribute(ariaHiddenAttr, `true`)
@@ -56,8 +68,10 @@ function main() {
         toggleElement(fieldsetEl)
       })
     })
+  }
 
-    // Menu Accordion
+  // Menu Accordion
+  if (menuEls && menuEls.length > 0) {
     menuEls.forEach(function (menuEl) {
       const menuItemEls = menuEl.querySelectorAll(`.menu-item`)
       menuItemEls.forEach(function (menuItemEl, index) {
@@ -74,8 +88,10 @@ function main() {
         })
       })
     })
+  }
 
-    // Random Landing Page BG
+  // Random Landing Page BG
+  if (landingHeadingEl) {
     let oldLandingBg = ``
     const landingClassList = landingHeadingEl.classList
     landingBgs.forEach(function (landingBg) {
@@ -89,8 +105,10 @@ function main() {
     const newLandingBg = getRandomArrayElement(landingBgs)
     landingHeadingEl.classList.remove(oldLandingBg)
     landingHeadingEl.classList.add(newLandingBg)
+  }
 
-    // Random Auth Page BG
+  // Random Auth Page BG
+  if (authEl) {
     let oldAuthBg = ``
     const authClassList = authEl.classList
     authBgs.forEach(function (authBg) {
@@ -104,27 +122,54 @@ function main() {
     const newAuthBg = getRandomArrayElement(authBgs)
     authEl.classList.remove(oldAuthBg)
     authEl.classList.add(newAuthBg)
+  }
 
-    btnMenuEl.addEventListener(`click`, function (event) {
-      event.preventDefault()
+  // Menu Buttons
+  if (sidebarEl) {
+    if (btnMenuEl) {
+      btnMenuEl.addEventListener(`click`, function (event) {
+        event.preventDefault()
 
-      sidebarEl.setAttribute(ariaHiddenAttr, `true`)
-    })
+        sidebarEl.setAttribute(ariaHiddenAttr, `true`)
+      })
+    }
 
-    btnCloseMenuEl.addEventListener(`click`, function (event) {
-      event.preventDefault()
+    if (btnCloseMenuEl) {
+      btnCloseMenuEl.addEventListener(`click`, function (event) {
+        event.preventDefault()
 
-      sidebarEl.setAttribute(ariaHiddenAttr, `false`)
-    })
+        sidebarEl.setAttribute(ariaHiddenAttr, `false`)
+      })
+    }
+  }
 
+  // Remove click event from active links
+  if (aActiveEls && aActiveEls.length > 0) {
     aActiveEls.forEach(function (aActiveEl) {
-      aActiveEl.addEventListener(`click`, function (event) {
+      aActiveEl.removeEventListener(`click`, function (event) {
         event.preventDefault()
         return
       })
     })
-  } catch (error) {
-    console.log(`menuEls`, error)
+  }
+
+  // Collapsible Tables
+  if (tableCollapsibleEls && tableCollapsibleEls.length > 0) {
+    tableCollapsibleEls.forEach(function (tableCollapsibleEl) {
+      tableCollapsibleEl.setAttribute(ariaExpandedAttr, `true`)
+
+      const captionEl = tableCollapsibleEl.querySelector(`caption`)
+      captionEl.addEventListener(`click`, function (event) {
+        event.preventDefault()
+
+        const ariaExpanded = tableCollapsibleEl.getAttribute(ariaExpandedAttr)
+        console.log(`ariaExpanded`, ariaExpanded)
+        tableCollapsibleEl.setAttribute(ariaExpandedAttr, `true`)
+        if (ariaExpanded && ariaExpanded === `true`) {
+          tableCollapsibleEl.removeAttribute(ariaExpandedAttr)
+        }
+      })
+    })
   }
 }
 
@@ -132,7 +177,9 @@ function main() {
  * Credit to: Adrian Roselli
  * https://adrianroselli.com/2018/05/functions-to-add-aria-to-tables-and-lists.html
  */
-function addTableARIA() {
+function addTableAria() {
+  logFunction(`addTableAria`)
+
   try {
     let allTables = document.querySelectorAll("table")
     for (let i = 0; i < allTables.length; i++) {
@@ -170,4 +217,4 @@ function addTableARIA() {
 
 // Call Functions
 main()
-addTableARIA()
+addTableAria()
