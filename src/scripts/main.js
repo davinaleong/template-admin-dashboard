@@ -81,11 +81,13 @@ function main() {
           menuItemEl.removeAttribute(ariaHiddenAttr)
         }
 
-        const menuItemLabelEl = menuItemEl.querySelector(`.menu-item-label`)
-        menuItemLabelEl.addEventListener(`click`, function (event) {
-          event.preventDefault()
-          toggleElement(menuItemEl)
-        })
+        const menuItemLabelEl = menuItemEl.querySelector(`.menu-item__label`)
+        if (menuItemLabelEl) {
+          menuItemLabelEl.addEventListener(`click`, function (event) {
+            event.preventDefault()
+            toggleElement(menuItemEl)
+          })
+        }
       })
     })
   }
