@@ -17,4 +17,13 @@ section,
       color: var(--section-heading-clr);
     }
   }
+
+  @each $key, $value in $colors {
+    &-#{$key} {
+      --section-clr: var(--clr-#{$key}-700);
+      --section-heading-clr: var(--clr-#{$key}-400);
+
+      --section-header-border-clr: var(--clr-#{$key}-500);
+    }
+  }
 }
