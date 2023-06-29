@@ -2,6 +2,7 @@ console.log(`main.js loaded`)
 
 // Attributes
 const dataElementAttr = `data-element`
+const dataActiveAttr = `data-active`
 const ariaHiddenAttr = `aria-hidden`
 
 // Elements
@@ -17,6 +18,7 @@ const btnCloseMenuEl = document.querySelector(
 const btnBackToTopEl = document.querySelector(
   `[${dataElementAttr}="btn-back-to-top"]`
 )
+const aActiveEls = document.querySelectorAll(`a[${dataActiveAttr}="true"]`)
 
 const landingBgs = [
   "bg-landing-1",
@@ -113,6 +115,15 @@ if (btnBackToTopEl) {
   window.addEventListener(`scroll`, function (event) {
     const ariaHidden = window.scrollY >= 100 ? `false` : `true`
     btnBackToTopEl.setAttribute(ariaHiddenAttr, ariaHidden)
+  })
+}
+
+if (aActiveEls && aActiveEls.length > 0) {
+  aActiveEls.forEach(function (aActiveEl) {
+    aActiveEl.addEventListener(`click`, function (event) {
+      event.preventDefault()
+      return
+    })
   })
 }
 

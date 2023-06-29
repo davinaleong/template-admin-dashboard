@@ -130,9 +130,17 @@
         <header class="section__header">
           <h1 class="fz-700">Today's Logs</h1>
           <ul class="breadcrumbs">
-            <li><a href="#" class="breadcrumb-item">Parent 1</a></li>
-            <li><a href="#" class="breadcrumb-item">Parent 2</a></li>
-            <li><a href="#" class="breadcrumb-item active">Active Item</a></li>
+            <li class="breadcrumb-item">
+              <a href="#" class="breadcrumb-item__link">Parent 1</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="#" class="breadcrumb-item__link">Parent 2</a>
+            </li>
+            <li class="breadcrumb-item">
+              <span class="breadcrumb-item__link" data-active="true">
+                Active Item
+              </span>
+            </li>
           </ul>
         </header>
       </section>
