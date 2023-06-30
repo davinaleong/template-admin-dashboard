@@ -286,11 +286,16 @@ input.form-field[type="checkbox"]:checked ~ .form-checkbox::before {
   --form-label-bg-clr: var(--clr-gray-200);
   --form-label-padding: var(--size-v-200);
   --form-label-width: 15ch;
+  --form-label-ta: left;
+  --form-label-gap: var(--size-v-100);
 
   color: var(--form-label-clr);
   background-color: var(--form-label-bg-clr);
   min-width: var(--form-label-width);
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: var(--form-label-gap);
+  text-align: var(--form-label-ta);
   padding-top: var(--form-label-padding);
   padding-right: var(--form-label-padding);
   padding-bottom: var(--form-label-padding);
