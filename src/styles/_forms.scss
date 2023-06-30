@@ -285,7 +285,7 @@ input.form-field[type="checkbox"]:checked ~ .form-checkbox::before {
   --form-label-clr: var(--clr-gray-800);
   --form-label-bg-clr: var(--clr-gray-200);
   --form-label-padding: var(--size-v-200);
-  --form-label-width: 15ch;
+  --form-label-width: 20ch;
   --form-label-ta: left;
   --form-label-gap: var(--size-v-100);
 
@@ -316,7 +316,7 @@ input.form-field[type="checkbox"]:checked ~ .form-checkbox::before {
 .form-group {
   --form-group-label-clr: var(--clr-gray-800);
   --form-group-label-bg-clr: var(--clr-gray-200);
-  --form-group-label-width: 15ch;
+  --form-group-label-width: 20ch;
 
   --form-group-field-wrapper-bg-clr: var(--clr-gray-100);
   --form-group-padding: var(--size-v-200);
