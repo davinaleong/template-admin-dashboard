@@ -193,6 +193,13 @@ function main() {
       const btnCloseDialogEl = dialogEl.querySelector(
         `[${dataElementAttr}="btn-close-dialog"]`
       )
+
+      if (btnCloseDialogEl) {
+        btnCloseDialogEl.addEventListener(`click`, function (event) {
+          event.preventDefault()
+          dialogEl.close()
+        })
+      }
     })
   }
 
@@ -203,14 +210,11 @@ function main() {
         event.preventDefault()
 
         const dataTarget = btnLaunchDialogEl.getAttribute(dataTargetAttr)
-        console.log(`Target`, dataTarget)
-
         const dialogEl = document.querySelector(
           `[${dataElementAttr}="${dataTarget}"]`
         )
 
         if (dialogEl) {
-          console.log(`Launch dialog`)
           dialogEl.showModal()
         }
       })
