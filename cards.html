@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Work Logger Template</title>
+
+    <link rel="icon" type="image/svg+xml" href="./src/assets/images/logo.svg" />
+    <link rel="stylesheet" href="./src/styles/main.scss" />
+
+    <script
+      src="https://kit.fontawesome.com/1b82ea5cb2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="./src/scripts/main.js"></script>
+  </head>
+  <body id="top" class="cms text-gray-800 bg-gray-50">
+    <button
+      class="btn btn-secondary btn-fixed btn-top btn-right shadow-v-br-400"
+      aria-label="Menu"
+      data-element="btn-menu"
+      style="
+        --btn-padding-x: var(--size-v-200);
+        --btn-padding-y: var(--size-v-100);
+        --btn-width: auto;
+      "
+    >
+      <i class="fa fa-bars"></i>
+    </button>
+    <a
+      href="#top"
+      class="btn btn-gray btn-fixed btn-bottom btn-right btn-icon btn-rounded shadow-v-br-400"
+      data-element="btn-back-to-top"
+      aria-label="Back to Top"
+      aria-hidden="true"
+      style="
+        --btn-padding-x: var(--size-v-200);
+        --btn-padding-y: var(--size-v-200);
+        --btn-width: auto;
+      "
+    >
+      <i class="fa fa-chevron-up"></i>
+    </a>
+    <aside
+      class="p-v-400 bg-secondary-200"
+      aria-hidden="false"
+      data-element="sidebar"
+    >
+      <div class="aside__top m-v-b-600">
+        <div class="aside__top__left">
+          <a href="#" class="brand" aria-label="Work Logger">
+            <img
+              src="./src/assets/images/logo.svg"
+              alt="logo"
+              width="80"
+              height="80"
+            />
+          </a>
+        </div>
+        <div class="aside__top__right">
+          <button class="btn btn-primary">
+            Logout <i class="fa fa-sign-out"></i>
+          </button>
+
+          <button
+            class="btn btn-link btn-link-danger"
+            style="--btn-fz: var(--fz-500)"
+            data-element="btn-close-menu"
+            aria-label="Close"
+          >
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <ul class="menu flow" role="list">
+        <li class="menu-item" data-active="true" aria-hidden="true">
+          <a href="#" class="menu-item__link">
+            <i class="fa-solid fa-sharp fa-dashboard"></i> Dashboard
+          </a>
+        </li>
+        <li class="menu-item" data-active="true" aria-hidden="true">
+          <a href="#" class="menu-item__link menu-item__label">
+            <i class="fa-solid fa-sharp fa-boxes"></i> Module Pages
+          </a>
+
+          <ul class="sub-menu flow" role="list">
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="./listing.html" class="menu-item__link">
+                <i class="fa-solid fa-sharp fa-list"></i> Listing Page
+              </a>
+            </li>
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="./listing.html" class="menu-item__link">
+                <i class="fa-solid fa-sharp fa-cards-blank"></i> Cards Listing
+                Page
+              </a>
+            </li>
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="#" class="menu-item__link">
+                <i class="fa-solid fa-sharp fa-pencil"></i> Create/Edit Page
+              </a>
+            </li>
+            <li style="--flow-spacer: var(--size-v-100)">
+              <a href="#" class="menu-item__link">
+                <i class="fa-solid fa-sharp fa-eye"></i> View Page
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <main class="main-content-wrapper | flow p-v-400">
+      <section class="flow">
+        <header class="section__header">
+          <h1 class="fz-700">Cards Listing Page</h1>
+
+          <p>
+            Today's date:
+            <span class="clr-gray-400 fs-italic">29 May 2023</span>
+          </p>
+
+          <ul class="breadcrumbs">
+            <li class="breadcrumb-item">
+              <a href="#" class="breadcrumb-item__link">Parent 1</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="#" class="breadcrumb-item__link">Parent 2</a>
+            </li>
+            <li class="breadcrumb-item">
+              <span class="breadcrumb-item__link" data-active="true">
+                Active Item
+              </span>
+            </li>
+          </ul>
+        </header>
+
+        <h4 class="fz-500">Card Grid</h4>
+        <div class="card-grid">
+          <a href="#" class="card flow">
+            <h4 class="card__title">Default</h4>
+            <div class="card__badge">10</div>
+            <ul class="card__list">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Tempore minus velit aut voluptatum.</li>
+              <li>Obcaecati eum incidunt doloremque natus.</li>
+              <li>Dignissimos totam tenetur exercitationem obcaecati.</li>
+              <li>Repudiandae soluta saepe dolor voluptas.</li>
+            </ul>
+            <div class="card__date">25 May 2023</div>
+          </a>
+
+          <a href="#" class="card flow">
+            <h4 class="card__title">Default</h4>
+            <div class="card__badge">10</div>
+            <ul class="card__list">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Tempore minus velit aut voluptatum.</li>
+              <li>Obcaecati eum incidunt doloremque natus.</li>
+              <li>Dignissimos totam tenetur exercitationem obcaecati.</li>
+              <li>Repudiandae soluta saepe dolor voluptas.</li>
+            </ul>
+            <div class="card__date">25 May 2023</div>
+          </a>
+
+          <a href="#" class="card flow">
+            <h4 class="card__title">Default</h4>
+            <div class="card__badge">10</div>
+            <ul class="card__list">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Tempore minus velit aut voluptatum.</li>
+              <li>Obcaecati eum incidunt doloremque natus.</li>
+              <li>Dignissimos totam tenetur exercitationem obcaecati.</li>
+              <li>Repudiandae soluta saepe dolor voluptas.</li>
+            </ul>
+            <div class="card__date">25 May 2023</div>
+          </a>
+
+          <a href="#" class="card flow">
+            <h4 class="card__title">Default</h4>
+            <div class="card__badge">10</div>
+            <ul class="card__list">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Tempore minus velit aut voluptatum.</li>
+              <li>Obcaecati eum incidunt doloremque natus.</li>
+              <li>Dignissimos totam tenetur exercitationem obcaecati.</li>
+              <li>Repudiandae soluta saepe dolor voluptas.</li>
+            </ul>
+            <div class="card__date">25 May 2023</div>
+          </a>
+
+          <a href="#" class="card flow">
+            <h4 class="card__title">Default</h4>
+            <div class="card__badge">10</div>
+            <ul class="card__list">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Tempore minus velit aut voluptatum.</li>
+              <li>Obcaecati eum incidunt doloremque natus.</li>
+              <li>Dignissimos totam tenetur exercitationem obcaecati.</li>
+              <li>Repudiandae soluta saepe dolor voluptas.</li>
+            </ul>
+            <div class="card__date">25 May 2023</div>
+          </a>
+        </div>
+
+        <ul class="pagination">
+          <li class="pagination-item">
+            <a href="#" class="pagination-item__arrow">
+              <i class="fa-solid fa-chevron-left"></i>
+            </a>
+          </li>
+          <li class="pagination-item">
+            <a href="#" class="pagination-item__number"> 1 </a>
+          </li>
+          <li class="pagination-item">
+            <a href="#" class="pagination-item__number" data-active="true">
+              2
+            </a>
+          </li>
+          <li class="pagination-item">
+            <a href="#" class="pagination-item__number"> 3 </a>
+          </li>
+          <li class="pagination-item">
+            <a href="#" class="pagination-item__arrow">
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="main__footer | border-f-t-solid-50-gray-400 p-v-t-400">
+        <p class="clr-gray-400 ta-center">
+          <small><em>Work Logger &copy; Davina Leong, 2023</em></small>
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
