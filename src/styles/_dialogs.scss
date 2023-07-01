@@ -1,0 +1,14 @@
+/// Dialogs
+dialog,
+.dialog {
+  --dialog-gutter: var(--size-v-400);
+
+  width: min(100% - var(--dialog-gutter), 80ch);
+  margin: auto;
+  padding: var(--size-400);
+  border: none;
+
+  &::backdrop {
+    background-color: hsl(0 0% 0% / 0.5);
+  }
+}

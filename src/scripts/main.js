@@ -3,6 +3,7 @@ console.log(`main.js loaded`)
 // Attributes
 const dataElementAttr = `data-element`
 const dataActiveAttr = `data-active`
+const dataTargetAttr = `data-target`
 const ariaHiddenAttr = `aria-hidden`
 const ariaExpandedAttr = `aria-expanded`
 
@@ -55,6 +56,10 @@ function main() {
   )
   const aActiveEls = document.querySelectorAll(`a[${dataActiveAttr}="true"]`)
   const tableCollapsibleEls = document.querySelectorAll(`.table-collapsible`)
+  const dialogEls = document.querySelectorAll(`dialog`)
+  const btnLaunchDialogEls = document.querySelectorAll(
+    `[${dataElementAttr}="btn-launch-dialog"]`
+  )
 
   // Collapsible Fieldsets
   if (fieldsetEls && fieldsetEls.length > 0) {
@@ -169,6 +174,44 @@ function main() {
         tableCollapsibleEl.setAttribute(ariaExpandedAttr, `true`)
         if (ariaExpanded && ariaExpanded === `true`) {
           tableCollapsibleEl.removeAttribute(ariaExpandedAttr)
+        }
+      })
+    })
+  }
+
+  // Toggle Back to Top Button on scroll
+  if (btnBackToTopEl) {
+    window.addEventListener(`scroll`, function (event) {
+      const ariaHidden = window.scrollY >= 100 ? `false` : `true`
+      btnBackToTopEl.setAttribute(ariaHiddenAttr, ariaHidden)
+    })
+  }
+
+  // Register Close Dialog Buttons
+  if (dialogEls && dialogEls.length > 0) {
+    dialogEls.forEach(function (dialogEl) {
+      const btnCloseDialogEl = dialogEl.querySelector(
+        `[${dataElementAttr}="btn-close-dialog"]`
+      )
+    })
+  }
+
+  // Toggle Dialogs
+  if (btnLaunchDialogEls && btnLaunchDialogEls.length > 0) {
+    btnLaunchDialogEls.forEach(function (btnLaunchDialogEl) {
+      btnLaunchDialogEl.addEventListener(`click`, function (event) {
+        event.preventDefault()
+
+        const dataTarget = btnLaunchDialogEl.getAttribute(dataTargetAttr)
+        console.log(`Target`, dataTarget)
+
+        const dialogEl = document.querySelector(
+          `[${dataElementAttr}="${dataTarget}"]`
+        )
+
+        if (dialogEl) {
+          console.log(`Launch dialog`)
+          dialogEl.showModal()
         }
       })
     })

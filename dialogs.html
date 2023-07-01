@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Work Logger Template</title>
+
+    <link rel="icon" type="image/svg+xml" href="./src/assets/images/logo.svg" />
+    <link rel="stylesheet" href="./src/styles/main.scss" />
+
+    <script
+      src="https://kit.fontawesome.com/1b82ea5cb2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="./src/scripts/main.js"></script>
+  </head>
+  <body class="template">
+    <div class="wrapper wrapper-aligned-center">
+      <header class="template-primary-header p-f-y-200">
+        <div>
+          <h1 class="fz-500 fw-bold">
+            <a href="./index.html">Work Logger Template</a>
+          </h1>
+        </div>
+      </header>
+
+      <main class="p-f-y-400 flow container">
+        <h2 class="fz-700 fw-bold">Dialogs</h2>
+
+        <p>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-element="btn-launch-dialog"
+            data-target="primary-dialog"
+          >
+            <i class="fa-regular fa-sharp fa-rocket"></i> Launch Primary Dialog
+          </button>
+          <button
+            class="btn btn-danger"
+            type="button"
+            data-element="btn-launch-dialog"
+            data-target="delete-dialog"
+          >
+            <i class="fa-regular fa-sharp fa-trash"></i> Launch Delete Dialog
+          </button>
+        </p>
+      </main>
+    </div>
+
+    <dialog
+      class="dialog | ta-center text-danger-800 bg-danger-100 shadow-v-br-400 p-v-400"
+      data-element="primary-dialog"
+    >
+      <div class="dialog-body | flow">
+        <h2 class="fz-600">Primary Dialog</h2>
+
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi,
+          dignissimos. Corrupti et vero a ipsam accusantium ducimus fugiat
+          quisquam reprehenderit.
+        </p>
+      </div>
+      <div class="dialog-footer">
+        <div
+          class="btn-group | jc-center"
+          style="--btn-group-gap: var(--size-v-200)"
+        >
+          <button
+            class="btn btn-secondary"
+            type="button"
+            data-element="btn-close-dialog"
+          >
+            <i class="fa-solid fa-sharp fa-ban"></i> Close
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog
+      class="dialog | ta-center text-danger-800 bg-danger-100 shadow-v-br-400 p-v-400"
+      data-element="delete-dialog"
+    >
+      <div class="dialog-body | flow">
+        <h2 class="fz-600">Delete Item</h2>
+
+        <p>
+          Are you sure?<br />
+          This action cannot be undone.
+        </p>
+      </div>
+      <div class="dialog-footer">
+        <div
+          class="btn-group | jc-center"
+          style="--btn-group-gap: var(--size-v-200)"
+        >
+          <button class="btn btn-danger" type="button">
+            <i class="fa-solid fa-sharp fa-trash"></i> Delete
+          </button>
+          <button
+            class="btn btn-secondary"
+            type="button"
+            data-element="btn-close-dialog"
+          >
+            <i class="fa-solid fa-sharp fa-ban"></i> Close
+          </button>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
