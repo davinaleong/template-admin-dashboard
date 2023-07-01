@@ -25,6 +25,8 @@
   padding-left: 0;
 
   &-item {
+    border-bottom: var(--menu-border);
+
     &__link {
       display: flex;
       align-items: center;
