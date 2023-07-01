@@ -1,4 +1,4 @@
-# `HTML` Template for Work Logger
+# Davina's Dashboard `HTML` Template
 
 This is the `HTML` and `SASS` template for the webiste Work Logger.
 
