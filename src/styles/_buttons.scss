@@ -186,6 +186,14 @@
     }
   }
 
+  &-toggle-label {
+    --btn-width: auto;
+
+    &__label {
+      display: none;
+    }
+  }
+
   &-rounded {
     --btn-border-radius: 50%;
   }
@@ -215,7 +223,7 @@
 /// Buttons - Queries
 @media screen and (min-width: #{breakpoint("lg")}) {
   .btn {
-    &-icon {
+    &-toggle-label {
       &__label {
         display: block;
       }
