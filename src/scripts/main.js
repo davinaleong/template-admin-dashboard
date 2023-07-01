@@ -4,6 +4,7 @@ console.log(`main.js loaded`)
 const dataElementAttr = `data-element`
 const dataActiveAttr = `data-active`
 const dataTargetAttr = `data-target`
+const dataSortDirectionAttr = `data-sort-direction`
 const ariaHiddenAttr = `aria-hidden`
 const ariaExpandedAttr = `aria-expanded`
 
@@ -16,6 +17,7 @@ const landingBgs = [
 ]
 
 const authBgs = ["bg-auth-1", "bg-auth-2", "bg-auth-3"]
+const sortDirections = ["asc", "desc"]
 
 // Functions
 function logFunction(name, params = {}) {
@@ -60,6 +62,7 @@ function main() {
   const btnLaunchDialogEls = document.querySelectorAll(
     `[${dataElementAttr}="btn-launch-dialog"]`
   )
+  const tableSortableEls = document.querySelectorAll(`.table-sortable`)
 
   // Collapsible Fieldsets
   if (fieldsetEls && fieldsetEls.length > 0) {
@@ -217,6 +220,31 @@ function main() {
         if (dialogEl) {
           dialogEl.showModal()
         }
+      })
+    })
+  }
+
+  // Toggle Sortable Table Headings
+  if (tableSortableEls && tableSortableEls.length > 0) {
+    tableSortableEls.forEach(function (tableSortableEl) {
+      const theadThEls = tableSortableEl.querySelectorAll(
+        `thead > tr:first-of-type > th`
+      )
+      theadThEls.forEach(function (theadThEl) {
+        theadThEl.setAttribute(dataSortDirectionAttr, sortDirections[1])
+
+        theadThEl.addEventListener(`click`, function (event) {
+          event.preventDefault()
+
+          const dataSortDirection = theadThEl.getAttribute(
+            dataSortDirectionAttr
+          )
+          console.log(dataSortDirection)
+          theadThEl.setAttribute(dataSortDirectionAttr, sortDirections[1])
+          if (dataSortDirection === sortDirections[1]) {
+            theadThEl.setAttribute(dataSortDirectionAttr, sortDirections[0])
+          }
+        })
       })
     })
   }
