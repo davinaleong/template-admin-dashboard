@@ -57,21 +57,31 @@
       }
     }
 
+    & .sub-menu-wrapper {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.5s ease-in-out;
+
+      & > div {
+        overflow: hidden;
+      }
+    }
+
     &[aria-hidden="true"] {
       .menu-item__label::after {
         transform: translate(-50%, -50%) rotate(135deg);
       }
 
-      .sub-menu {
-        display: block;
+      .sub-menu-wrapper {
+        grid-template-rows: 1fr;
       }
     }
   }
 
-  .sub-menu {
-    display: none;
-    padding-left: var(--menu-padding);
-    margin-left: var(--menu-margin);
-    border-left: var(--menu-border);
-  }
+  // .sub-menu {
+  //   display: none;
+  //   padding-left: var(--menu-padding);
+  //   margin-left: var(--menu-margin);
+  //   border-left: var(--menu-border);
+  // }
 }
