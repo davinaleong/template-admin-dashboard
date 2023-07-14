@@ -1,0 +1,65 @@
+/// Progress Bars
+.progress-bar {
+  --progress-bar-width: auto;
+  --progress-bar-height: var(--size-v-400);
+  --progress-bar-padding: var(--size-v-100);
+
+  --progress-bar-bg-clr: var(--clr-gray-200);
+  --progress-bar-border-clr: var(--clr-gray-800);
+  --progress-bar-border: none;
+
+  --progress-bar-fill-width: 0%;
+  --progress-bar-fill-bg-clr: var(--clr-primary-400);
+
+  width: var(--progress-bar-width);
+  min-height: calc(
+    var(--progress-bar-height) + (var(--progress-bar-padding) * 2)
+  );
+  background-color: var(--progress-bar-bg-clr);
+  overflow: hidden;
+  position: relative;
+  border: var(--progress-bar-border);
+
+  &__fill {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--progress-bar-fill-width);
+    position: absolute;
+    background-color: var(--progress-bar-fill-bg-clr);
+    padding-top: var(--progress-bar-padding);
+    padding-right: var(--progress-bar-padding);
+    padding-bottom: var(--progress-bar-padding);
+    padding-left: var(--progress-bar-padding);
+    animation: progress-bar 3s;
+  }
+
+  @each $key, $value in $colors {
+    &-#{$key} {
+      --progress-bar-bg-clr: var(--clr-#{$key}-200);
+      --progress-bar-fill-bg-clr: var(--clr-#{$key}-400);
+    }
+  }
+
+  &-outline {
+    --progress-bar-border: thin solid var(--progress-bar-border-clr);
+
+    @each $key, $value in $colors {
+      &-#{$key} {
+        --progress-bar-bg-clr: var(--clr-#{$key}-200);
+        --progress-bar-fill-bg-clr: var(--clr-#{$key}-400);
+        --progress-bar-border-clr: var(--clr-#{$key}-800);
+      }
+    }
+  }
+}
+
+@keyframes progress-bar {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: var(--progress-bar-fill-width);
+  }
+}
