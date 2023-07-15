@@ -1,0 +1,32 @@
+// Login
+.login {
+    display: grid;
+    grid-template-rows: 2fr 3fr;
+    grid-template-columns: auto;
+    min-height: 100vh;
+
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--clr-gray-50);
+    }
+
+    &__main {
+        display: flex;
+        align-items: center;
+
+        .main-content-wrapper {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: #{breakpoint("xl")}) {
+    .login {
+        grid-template-rows: auto;
+        grid-template-columns: 2fr 1fr;
+    }
+}

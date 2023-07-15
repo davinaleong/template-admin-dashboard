@@ -7,87 +7,29 @@
     <title>Work Logger Template</title>
 
     <link rel="icon" type="image/svg+xml" href="./src/assets/images/logo.svg" />
-    <link rel="stylesheet" href="./src/styles/main.scss" />
+    <link rel="stylesheet" href="./src/styles/app.scss" />
 
     <script
       src="https://kit.fontawesome.com/1b82ea5cb2.js"
       crossorigin="anonymous"
     ></script>
-    <script defer type="module" src="./src/scripts/main.js"></script>
+    <script defer type="module" src="./src/scripts/app.js"></script>
   </head>
-  <body class="landing">
-    <header class="landing__heading bg-full bg-landing-1 flow p-v-400">
+  <body class="landing bg-full bg-landing-1 flow p-v-400">
+    <main class="flow p-v-400">
       <h1 class="fz-900 clr-gray-50 ta-center">
         <small>Welcome to</small><br />
-        <strong>Work Logger</strong>
+        <strong>{{ env('APP_NAME', 'Bolierplate Auth Laravel') }}</strong>
       </h1>
-    </header>
+      <p class="fz-500">By {{ env('APP_AUTHOR', 'Davina Leong') }}</p>
 
-    <main class="landing__main bg-gray-50">
-      <div class="main-content-wrapper flow p-v-400">
-        <h2 class="fz-700">Please login</h2>
-
-        <form action="#" method="post">
-          <div class="form-group">
-            <label for="email" class="form-label">
-              <i class="fa-duotone fa-envelope"></i> Email
-            </label>
-            <div class="form-field-wrapper">
-              <input
-                type="text"
-                name="email"
-                id="email"
-                class="form-field"
-                required
-              />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="password" class="form-label">
-              <i class="fa-duotone fa-key"></i> Password
-            </label>
-            <div class="form-field-wrapper">
-              <input
-                type="password"
-                name="password"
-                id="password"
-                class="form-field"
-                required
-              />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="checkbox-remember-me" class="form-label">
-              <i class="fa-duotone fa-key"></i> Remember Me
-            </label>
-            <div class="form-field-wrapper">
-              <label
-                for="checkbox-remember-me"
-                class="form-radio-checkbox-wrapper form-radio-checkbox-wrapper-gray"
-              >
-                Yes
-                <input
-                  type="checkbox"
-                  name="checkbox-remember-me"
-                  id="checkbox-remember-me"
-                  class="form-field"
-                  value="1"
-                />
-                <span class="form-checkbox"></span>
-              </label>
-            </div>
-          </div>
-
-          <div class="btn-group m-v-t-400">
-            <button class="btn btn-primary" type="submit">
-              <i class="fa-solid fa-sharp fa-check"></i> Submit
-            </button>
-
-            <a href="./forgot-password-1.html" class="btn btn-gray">
-              <i class="fa-solid fa-sharp fa-question"></i> Forgot Password
-            </a>
-          </div>
-        </form>
+      <div class="btn-container">
+        <a href="{{ route('login') }}" class="btn btn-accent-2" autofocus>
+          <i class="fa-solid fa-sharp fa-sign-in"></i> Login
+        </a>
+        <a href="{{ route('register') }}" class="btn btn-secondary">
+          <i class="fa-solid fa-sharp fa-add"></i> Register
+        </a>
       </div>
     </main>
   </body>
